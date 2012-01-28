@@ -1,0 +1,620 @@
+/*
+Theme Name: Melville
+Theme URI: http://madebyraygun.com/labs/melville
+Description: A clean journal theme with great typography
+Version: 1.0
+Author: Dalton Rooney
+Author URI: http://madebyraygun.com
+Tags: clean, basic, typography, minimalist, white, single column
+
+Based on TwentyTen, the default WordPress theme
+*/
+
+/* @group Google Font Loader */
+
+#site-title a, #content h1.entry-title, #content h1.page-title, #content h2.entry-title, span.cap {
+	visibility: hidden;
+}
+
+.wf-active #site-title a, .wf-active #site-title a, .wf-active #content h1.entry-title, .wf-active #content h1.page-title, .wf-active #content h2.entry-title, .wf-active span.cap, .wf-inactive #site-title a, .wf-inactive #site-title a, .wf-inactive #content h1.entry-title, .wf-inactive #content h1.page-title, .wf-inactive #content h2.entry-title, .wf-inactive span.cap {
+	visibility: visible;
+}
+ 
+/* @end */
+
+/* @group Reset */
+
+/* Based upon 'reset.css' in the Yahoo! User Interface Library: http://developer.yahoo.com/yui */
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td { margin:0; padding:0 }
+table { border-collapse:collapse; border-spacing:0 }
+fieldset, img { border:0 }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal }
+ul li { list-style:none }
+caption, th { text-align:left }
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal }
+q:before, q:after { content:''}
+
+/* Global reset-RESET */
+/* The below restores some sensible defaults */
+strong { font-weight:bold }
+em { font-style:italic }
+a img { border:none } /* Gets rid of IE's blue borders */
+
+/* @end */
+
+/* @group Body */
+
+body {
+	font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+	font-size: 0.9em;
+	color: #555555;
+	background: #eeeeee url(images/bg.png);
+	text-align: left;
+	line-height: 1.3em;
+	margin: 0;
+	text-shadow: #fff 0 0 1px;
+}
+
+div#wrapper {
+	width: 650px;
+	background-color: #ffffff;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -40px;
+	padding: 20px 80px 0 80px;
+	border-right: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	-moz-box-shadow: 1px 0 20px #dddddd;
+	-webkit-box-shadow: 1px 0 20px #dddddd;
+	box-shadow: 1px 0 20px #dddddd;
+	overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 { 		font-weight:normal; 		margin: 15px 0;
+	clear: both;
+}
+
+#content h1 {
+	font-size: 1.6em;
+	font-weight: bold;
+	margin: 20px 0;
+}
+
+#content h2 {
+	font-size: 1.4em;
+}
+
+#content h3 {
+	font-size: 1.2em;
+}
+
+#content h4 {
+	font-size: 1em;
+}
+
+#content h5 {
+	font-size: 0.9em;
+}
+
+#content h6 {
+	font-size: 0.9em;
+}
+
+p {
+	margin:  0 0 20px 0;
+	line-height: 1.5em;
+}
+
+a {color: #777777;}
+
+a:hover {color: #555555;}
+
+blockquote {
+	margin: 30px 0 0 0;
+	padding: 0 0 0 30px;
+	border-left: 1px solid #eee;
+	font-style: italic;
+}
+
+cite {
+	font-style: italic;
+}
+
+html, body {
+	height: 100%;
+}
+
+hr {
+	margin: 20px 0;
+}
+
+#content table {
+	border: 1px solid #e7e7e7;
+	margin: 0 -1px 24px 0;
+	text-align: left;
+	width: 100%;
+}
+
+#content tr th, #content thead th {
+	color: #888;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 18px;
+	padding: 9px 24px;
+}
+
+#content tr td {
+	border-top: 1px solid #e7e7e7;
+	padding: 6px 24px;
+}
+
+#content tr.odd td {
+	background: #fafafa;
+}
+
+#content div.post {
+	margin: 0 0 70px 0;
+}
+
+#content div.post p:first-of-type:first-letter{
+	font-weight:bold;
+	font-family: 'OFL Sorts Mill Goudy TT', Georgia, serif;	
+	float:left;
+	font-size: 3em;
+	line-height:1em;
+	margin: -2px 2px -7px 0;
+	position:relative;	
+}
+
+#content div.post p.wp-caption-text:first-of-type:first-letter {
+	font-size: 12px;
+	margin: 0;
+	font-weight:normal;
+	font-family: Georgia, serif;
+	float: none;
+	display: inline;
+}
+
+#content ul, #content ol {
+	margin: 5px 0;
+}
+
+#content li {
+	margin: 0 0 0 20px;
+}
+
+#content dt,
+#content th {
+	font-size: 1.1em;
+	margin: 15px 0;
+}
+
+#content pre {
+	margin: 20px 0;
+	padding: 10px;
+	background-color: #fdfdfd;	
+	border: 1px solid #eeeeee;
+}
+
+#content address {
+	font-style: italic;
+	margin: 15px 0;
+}
+
+#content var {
+	font-style: italic;
+}
+
+#content h1.entry-title, #content h1.page-title, #content h2.entry-title{
+	text-align: center;
+	margin: 0 0 30px 0;
+	font-weight: normal;
+	font-family: 'OFLSortsMillGoudyRegular', Georgia, serif;	
+	font-size: 1.8em;
+	line-height:1.2em;
+	text-decoration: none;
+	color: #555555;
+	clear: both;
+}
+
+#content abbr, #content acronym {
+	border-bottom: 1px dotted #ccc;
+}
+
+#content big {
+	font-size: 1.2em;
+}
+
+#content ins {
+	color: #333;
+	background: #f5f5f5;
+	text-decoration: none;
+}
+
+div#content {
+	margin: 0 0 20px 0;
+}
+
+#content div.post p.date, #content div.post p.post-meta {
+	margin: 30px 0 0 0;
+	padding-bottom: 40px;
+	background: url(images/post-sep.png) no-repeat center bottom;
+}
+
+#content div.post p.post-meta {
+	margin: 0 0;
+}
+
+.single #content div.post p.date {
+	font-size: 1em;
+	margin: 40px 0 5px 0;
+	padding: 0;
+	background: none;
+}
+
+.page #content h2 {
+	font-family: 'OFLSortsMillGoudyRegular', Georgia, serif;	margin: 35px 0 10px;
+	font-size: 18px;
+	color: #555555;
+}
+
+.page.page-template-archives-php  #content h2 {
+	font-size: 20px;
+	margin: 60px 0 16px;
+}
+
+label.screen-reader-text {
+	display: none;
+}
+
+
+.entry-title a, .page-title a{
+	color: #555555;
+	text-decoration: none;
+}
+
+#content div.post p.date, p.post-meta {
+	font-size: .8em;
+	clear: both;
+}
+
+a#cancel-comment-reply-link {
+	font-family: 'helvetica neue',helvetica, arial,sans-serif;
+	font-size: 11px;
+	margin: 0 10px;
+}
+
+p.wp-caption-text {
+	font-size: 11px;
+	margin: 0 0 20px 20px;
+}
+
+.page-link {
+	margin: 20px 0 22px 0;
+	}
+	
+.page-link a:link, .page-link a:visited {
+	background: #f1f1f1;
+	color: #333;
+	font-weight: normal;
+	padding: 0.2em;
+	text-decoration: none;
+}
+.home .sticky .page-link a {
+	background: #d9e8f7;
+}
+.page-link a:active,
+.page-link a:hover {
+	color: #aaa;
+}
+
+.alignnone {margin: 20px 0;}
+.aligncenter { display:block; margin:20px auto;}
+.alignleft { float:left; margin: 5px 20px 5px 0; }
+.alignright { float:right; margin: 5px 0 5px 20px;}
+.wp-caption { border:none; padding:0px; margin-bottom:40px;}
+.size-thumbnail {margin-right: 10px;}
+br.clear { clear:both; display:block; height:1px; margin:-1px 0 0 0 } /* Use this br class to clear your floated columns */
+
+/* @end */
+
+/* @group Header */
+
+div#header {
+	margin: 0 0 60px 0;
+	padding: 0 0 20px 0;
+	width: 650px;
+	color: #777777;
+	border-bottom: 1px solid #bbbbbb;
+}
+
+#site-title {
+	margin: 40px 0 20px 0;
+	text-align: center;
+}
+
+#site-title a {
+	font-family: 'OFLSortsMillGoudyItalic', Georgia, sans;	font-size: 60px;
+	font-style: italic;
+	text-decoration: none;
+	color: #555555;
+}
+
+div#site-description {
+	text-align: center;	
+}	
+
+/* @end */
+
+/* @group Archives */
+
+.archive #content h1.page-title {
+	margin-bottom: 60px;
+}
+
+input#s {
+	color: #777777;
+	font-size: 12px;
+	height: 16px;
+	width: 200px;
+	padding: 3px 5px;
+	border: 1px solid #dddddd;
+	background-color: #fefefe;
+}
+
+input#searchsubmit {
+	color: #777777;
+	font-size: 12px;
+	height: 24px;
+	width: 80px;
+	margin: 0 0 0 40px;
+	border: 1px solid #dddddd;
+	background-color: #fefefe;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+input#searchsubmit:hover {
+border-color: #aaaaaa;
+	color: #555555;
+}
+
+.page-template-archives-php ul.taxonomy {
+	-moz-column-count: 3;
+	-moz-column-gap: 20px;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 20px;
+	column-count: 3;
+	column-gap: 20px;
+}
+
+.archive h1.page-title {
+	margin-bottom: 60px;
+}
+
+.archive #content div.post p.date {
+	margin: 10px 0 15px 0;
+}
+
+.page-template-archives-php #content ul, .page-template-archives-php #content ol {
+	margin:0;
+}
+
+.page-template-archives-php #content li {
+	margin:0;
+}
+
+.page-template-archives-php #content li li {
+	margin: 0 0 0 10px;
+}
+
+.archive #content div.post {
+	margin: 0 0 60px 0;
+	padding: 0 0 10px 0;
+	background: url(images/post-sep.png) no-repeat center bottom;
+}
+
+/* @end */
+
+/* @group Gallery */
+
+#content .gallery {
+	margin-top: 20px;
+}
+
+#content .gallery .gallery-item {
+	float: left;
+	margin: 0 0 20px 0;
+	text-align: left;
+	width: 33%;
+	text-align: center;
+}
+
+#content .gallery img {
+	border: 1px solid #dddddd;
+}
+
+#content .gallery .gallery-caption {
+	color: #888;
+	font-size: 12px;
+	margin: 0 0 12px;
+}
+
+#content .gallery dl {
+	margin: 0;
+}
+
+#content .gallery img {
+	border: 1px solid #dddddd;
+}
+
+#content .gallery br+br {
+	display: none;
+}
+
+#content .attachment img {
+	display: block;
+	margin: 0 auto;
+}
+
+/* @end */
+
+/* @group Comments */
+
+form#commentform {
+	width: 400px;
+}
+
+h3#reply-title, h3#comments-title {
+	font-family: 'OFL Sorts Mill Goudy TT', Georgia, serif;	margin: 50px 0 0 0;
+	font-size: 18px;
+	color: #555555;
+}
+
+p.comment-notes {
+	font-size: 0.8em;
+	font-style: italic;
+	margin: 5px 0 20px;
+}
+
+#commentform label {
+	font-size: 0.9em;
+	width: 30px;
+}
+
+#commentform input, #commentform textarea {
+	height: 17px;
+	width: 280px;
+	padding: 3px;
+	float:right;
+	margin: 0 50px 0 0;
+	border: 1px solid #dddddd;
+	background-color: #fcfcfc;
+	color: #777777;
+	overflow: hidden;
+}
+
+#commentform textarea {
+	height: 100px;
+	width: 280px;
+}
+
+#commentform input#submit {
+	clear: both;
+	float: none;
+	width: 95px;
+	height: 22px;
+	margin: 20px 0 0 255px;
+	-webkit-border-radius: 03px;
+	-moz-border-radius: 03px;
+	border-radius: 03px;
+}
+
+#commentform input#submit:hover {
+	border-color: #aaaaaa;
+	color: #555555;
+}
+
+img.avatar {
+	display: none;
+}
+
+#comments ol li {
+	margin: 20px 0;
+	list-style-type: none;
+}
+
+#comments ol li.depth-1 {
+	border-bottom: 1px solid #efefef;
+	padding:  0 0 20px 0;
+	width: 500px;
+}
+
+#comments ol li.depth-2, #comments ol li.depth-3 {
+	margin: 10px 0 0 20px;	
+}
+
+#commentform p.logged-in-as {
+	font-size: 11px;	
+}
+
+.comment-meta {
+	font-size: 11px;
+}
+
+.comment-body p {
+	margin: 10px 0 0 0;	
+	width: 450px;
+}
+
+#cancel-comment-reply-link {
+	font-family: ;
+}
+
+a.comment-reply-link {
+	font-size: 11px;
+}
+
+p.form-allowed-tags {
+	display: none;
+}
+
+/* @end */
+
+/* @group Menu */
+
+#menu {
+	width:810px;	
+	margin: 0 auto;
+	border-right: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	-moz-box-shadow: 1px 4 20px #dddddd;
+	-webkit-box-shadow: 1px 4 20px #dddddd;
+	box-shadow: 1px 4 20px #dddddd;
+}
+
+#menu div.menu, #menu div.menu-footer {	background-color: #dadada;		border-bottom-style: double; 
+	border-bottom-color: #bbb; 
+	border-bottom-width: 3px;
+	border-top-style: double; 
+	border-top-color: #bbb; 
+	border-top-width: 3px;}#menu div.menu ul, #menu div.menu-footer ul {	margin: 0 0 0 0;	padding: 10px 0 6px;	border-bottom: 1px solid #dddddd;
+	text-align: center;}#menu div.menu li, #menu div.menu-footer li {	display: inline;	margin: 0 15px;}#menu div.menu li a, #menu div.menu-footer li a {	text-decoration: none;	font-family: 'OFL Sorts Mill Goudy TT', Georgia, serif;	font-size: 18px;	font-style: italic;	text-decoration: none;	color: #555555;}#menu div.menu li a:hover, #menu div.menu-footer li a:hover {	color: #333333;}#menu div.menu ul li.current_page_item a, #menu div.menu-footer ul li.current_page_item a{	text-decoration: underline;	
+	color: #333333;
+}
+
+/* @end */
+
+/* @group Footer */
+
+ .push, #footer {
+	height: 40px;
+	clear: both;
+}
+
+div#footer {
+	width: 810px;
+	margin: 0 auto;
+	padding: 20px 0 0 0;
+	background-color: #fafafa;
+	border-top: 1px solid #dddddd;
+	border-right: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	-moz-box-shadow: 1px 4 20px #dddddd;
+	-webkit-box-shadow: 1px 4 20px #dddddd;
+	box-shadow: 1px 4 20px #dddddd;
+}
+
+#footer p.credits {
+	margin: 0 80px;
+	font-size: .8em;
+}
+
+span.older-posts a, span.newer-posts a{
+	text-decoration: none;
+	margin-right: 20px;
+}
+
+/* @end */

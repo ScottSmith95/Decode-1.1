@@ -1,0 +1,8 @@
+@import url("../fonts/OFL-Sorts-Mill-Goudy/ofl-normal.css");
+@import url("../fonts/OFL-Sorts-Mill-Goudy/ofl-italic.css");
+
+#site-title a, #content h1.entry-title, #content h1.page-title, #content h2.entry-title, span.cap {
+	visibility: visible;
+}
+
+
