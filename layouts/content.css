@@ -1,0 +1,18 @@
+/*
+Theme Name: Melville
+Layout: Content
+*/
+
+.site-content {
+	float: left;
+	margin: 0;
+	width: 100%;
+}
+
+#content {
+	margin: 0 0 0 0;
+}
+.site-footer {
+	clear: both;
+	width: 100%;
+}
