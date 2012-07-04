@@ -6,6 +6,8 @@
  * @since Melville 1.0
  */
 
+$melville_version = '2.0a';
+
 /* 
  * Loads the Options Panel
  *
@@ -128,50 +130,48 @@ add_action( 'widgets_init', 'melville_widgets_init' );
  */
 function melville_scripts() {
 	global $post;
-
-	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
+	
+	wp_enqueue_style( 'melville', get_stylesheet_uri(), false, $melville_version, 'all' );
+		
+	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), $melville_version, true );
 	
 	/* Enable this script for custom javascript functionality */
-	wp_enqueue_script( 'melville', get_template_directory_uri() . '/js/global.js', array( 'jquery' ), '2.0', true );
+	wp_enqueue_script( 'melville', get_template_directory_uri() . '/js/global.js', array( 'jquery' ), $melville_version, true );
 }
 
 add_action( 'wp_enqueue_scripts', 'melville_scripts' );
+
+
+/* 
+ * Custom Layout */
+
+function melville_layout( $column ) {
+	
+	$melville_columns = of_get_option('layout', '2c-l-fixed'); 
+	
+	switch ( $melville_columns ) {
+	    case '2c-r-fixed':
+	       	wp_enqueue_style( '2c-r-fixed', get_template_directory_uri() . '/layouts/content-sidebar.css', false, $melville_version, 'all' );
+	        break;
+	    case '1col-fixed':
+	    	wp_enqueue_style( '1c-fixed', get_template_directory_uri() . '/layouts/content.css', false, $melville_version, 'all' );
+	        break;
+	    default:
+	       	wp_enqueue_style( '2c-l-fixed', get_template_directory_uri() . '/layouts/sidebar-content.css', false, $melville_version, 'all' );
+
+	        break;
+	}
+	
+}  
+
+
+add_action( 'wp_enqueue_scripts', 'melville_layout' );
 
 /**
  * Implement the Custom Header feature
  */
  
 require( get_template_directory() . '/inc/custom-header.php' );
-
-/* 
- * Custom Sidebar Classes 
- */
-
-function melville_layout( $column ) {
-	
-	$melville_columns = of_get_option('layout', '2c-l-fixed'); 
-	
-	switch ($melville_columns) {
-	    case '2c-r-fixed':
-	        $secondary = ' three columns push_one';
-	        $primary = ' eight columns';
-	        break;
-	    case '1c-fixed':
-	        $secondary = '';
-	        $primary = ' twelve columns';
-	        break;
-	    default:
-	        $secondary = ' three columns pull';
-	        $primary = ' eight columns push';
-	        break;
-	}
-	
-	if ( $column == 'primary' ) {
-		return $primary;	
-	} else {
-		return $secondary;
-	}
-}  
 
 // Add specific CSS class by filter
 
