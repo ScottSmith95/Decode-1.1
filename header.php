@@ -2,36 +2,14 @@
 /**
  * The Header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="content">
+ * @package Melville
+ * @since Melville 1.0
  */
- 
 ?><!DOCTYPE html>
-<!--[if IE ]>    <html <?php language_attributes(); ?> class="ie"> <![endif]-->
- <!--[if !(IE)]><!-->  <html <?php language_attributes(); ?>>  <!--<![endif]-->
-
-
+<html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-
- <script type="text/javascript">
-      WebFontConfig = {
-       custom: { families: ['OFLSortsMillGoudyRegular', 'OFLSortsMillGoudyItalic'],
-    urls: [ '<?php echo get_template_directory_uri(); ?>/fonts/OFL-Sorts-Mill-Goudy/ofl-normal.css',
-      '<?php echo get_template_directory_uri(); ?>/fonts/OFL-Sorts-Mill-Goudy/ofl-italic.css' ] }
-      };
-      (function() {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-      })();
-    </script>
-<noscript><link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/noscript.css" /></noscript>  
+<meta name="viewport" content="width=device-width" />
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -50,26 +28,35 @@
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+		echo ' | ' . sprintf( __( 'Page %s', 'melville' ), max( $paged, $page ) );
 
 	?></title>
-
+	
+<link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
+<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="all"></script>
+<!--[if lt IE 9]>
+<script src="<?php echo get_template_directory_uri(); ?>/js/plugins.js" type="text/javascript"></script>
+<![endif]-->
 
-<?php wp_head();?>
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<div id="wrapper">
-	<div id="header">
-		<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
-				<<?php echo $heading_tag; ?> id="site-title">
-						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				</<?php echo $heading_tag; ?>>
-				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+<div id="page" class="hfeed site container">
+	<?php do_action( 'before' ); ?>
+	<header id="masthead" class="site-header cf row" role="banner">
+		<hgroup>
+			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</hgroup>
 
-		
-	</div><!--#header-->
-	
-<div id="content">	
+		<nav role="navigation" class="site-navigation main-navigation">
+			<h1 class="assistive-text"><?php _e( 'Menu', 'melville' ); ?></h1>
+			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'melville' ); ?>"><?php _e( 'Skip to content', 'melville' ); ?></a></div>
+
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav>
+	</header><!-- #masthead .site-header -->
+
+	<div id="main" class="row">

@@ -2,49 +2,98 @@
 /**
  * The template for displaying Archive pages.
  *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Melville
+ * @since Melville 1.0
  */
 
 get_header(); ?>
 
-<?php
-	/* Queue the first post, that way we know
-	 * what date we're dealing with (if that is the case).
-	 *
-	 * We reset this later so we can run the loop
-	 * properly with a call to rewind_posts().
-	 */
-	if ( have_posts() )
-		the_post();
-?>
+		<section id="primary" class="site-content">
+			<div id="content" role="main">
 
-			<h1 class="page-title">
-<?php if ( is_day() ) : ?>
-				<?php printf( __( 'Archives for  %s', 'twentyten' ), get_the_date() ); ?>
-<?php elseif ( is_month() ) : ?>
-				<?php printf( __( 'Archives for  %s', 'twentyten' ), get_the_date('F Y') ); ?>
-<?php elseif ( is_year() ) : ?>
-				<?php printf( __( 'Archives for  %s', 'twentyten' ), get_the_date('Y') ); ?>
-<?php else : ?>
-				<?php _e( 'Archives', 'twentyten' ); ?>
-<?php endif; ?>
-			</h1>
+			<?php if ( have_posts() ) : ?>
 
-<?php
-	/* Since we called the_post() above, we need to
-	 * rewind the loop back to the beginning that way
-	 * we can run the loop properly, in full.
-	 */
-	rewind_posts();
+				<header class="page-header">
+					<h1 class="page-title">
+						<?php
+							if ( is_category() ) {
+								printf( __( 'Category Archives: %s', 'melville' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
-	/* Run the loop for the archives page to output the posts.
-	 * If you want to overload this in a child theme then include a file
-	 * called loop-archives.php and that will be used instead.
-	 */
-	 get_template_part( 'loop', 'archive' );
-?>
+							} elseif ( is_tag() ) {
+								printf( __( 'Tag Archives: %s', 'melville' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 
+							} elseif ( is_author() ) {
+								/* Queue the first post, that way we know
+								 * what author we're dealing with (if that is the case).
+								*/
+								the_post();
+								printf( __( 'Author Archives: %s', 'melville' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
+								/* Since we called the_post() above, we need to
+								 * rewind the loop back to the beginning that way
+								 * we can run the loop properly, in full.
+								 */
+								rewind_posts();
+
+							} elseif ( is_day() ) {
+								printf( __( 'Daily Archives: %s', 'melville' ), '<span>' . get_the_date() . '</span>' );
+
+							} elseif ( is_month() ) {
+								printf( __( 'Monthly Archives: %s', 'melville' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+
+							} elseif ( is_year() ) {
+								printf( __( 'Yearly Archives: %s', 'melville' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+
+							} else {
+								_e( 'Archives', 'melville' );
+
+							}
+						?>
+					</h1>
+					<?php
+						if ( is_category() ) {
+							// show an optional category description
+							$category_description = category_description();
+							if ( ! empty( $category_description ) )
+								echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $category_description . '</div>' );
+
+						} elseif ( is_tag() ) {
+							// show an optional tag description
+							$tag_description = tag_description();
+							if ( ! empty( $tag_description ) )
+								echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' );
+						}
+					?>
+				</header>
+
+				<?php rewind_posts(); ?>
+
+				<?php melville_content_nav( 'nav-above' ); ?>
+
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php
+						/* Include the Post-Format-specific template for the content.
+						 * If you want to overload this in a child theme then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'content', get_post_format() );
+					?>
+
+				<?php endwhile; ?>
+
+				<?php melville_content_nav( 'nav-below' ); ?>
+
+			<?php else : ?>
+
+				<?php get_template_part( 'no-results', 'archive' ); ?>
+
+			<?php endif; ?>
+
+			</div><!-- #content -->
+		</section><!-- #primary .site-content -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -1,26 +1,28 @@
-<?php /* The footer for our theme.*/ ?>
-</div><!--//content-->
-
 <?php
 /**
  * The template for displaying the footer.
  *
- * Contains the closing of the id=main div and all content
- * after.  Calls sidebar-footer.php for bottom widgets.
+ * Contains the closing of the id=main div and all content after
  *
- * @package WordPress
- * @subpackage Starkers
- * @since Starkers 3.0
+ * @package Melville
+ * @since Melville 1.0
  */
 ?>
-<div class="push">
-</div>
-</div><!--#wrapper-->
-<div id="menu"><?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used.  */ ?>
-<?php wp_nav_menu( array( 'container_class' => 'menu-footer', 'theme_location' => 'primary' ) ); ?></div>
-<div id="footer">
-<?php wp_footer();?>
-<p class="credits">Made by <a href="http://madebyraygun.com">Raygun</a>, powered by <a href="http://wordpress.org/" rel="generator">WordPress</a></p>
-</div><!--/footer-->
+
+	</div><!-- #main -->
+<div class="push"></div>
+</div><!-- #page .hfeed .site -->
+
+	<footer id="colophon" class="site-footer row" role="contentinfo">
+		<div class="site-info">
+			<?php do_action( 'melville_credits' ); ?>
+			Powered by <a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'melville' ); ?>" rel="generator"><?php printf( __( '%s', 'melville' ), 'WordPress' ); ?></a>.
+			<?php printf( __( ' Melville theme by %s.', 'melville' ), '<a href="http://madebyraygun.com" rel="designer">Raygun</a>' ); ?>
+		</div><!-- .site-info -->
+	</footer><!-- .site-footer .site-footer -->
+
+
+<?php wp_footer(); ?>
+
 </body>
 </html>

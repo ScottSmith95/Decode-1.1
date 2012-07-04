@@ -1,23 +1,41 @@
 <?php
 /**
  * The template for displaying Search Results pages.
-**/
+ *
+ * @package Melville
+ * @since Melville 1.0
+ */
 
 get_header(); ?>
 
-<?php if ( have_posts() ) : ?>
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyten' ), '' . get_search_query() . '' ); ?></h1>
-				<?php
-				/* Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called loop-search.php and that will be used instead.
-				 */
-				 get_template_part( 'loop', 'search' );
-				?>
-<?php else : ?>
-					<h2><?php _e( 'Nothing Found', 'twentyten' ); ?></h2>
-					<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'twentyten' ); ?></p>
-					<?php get_search_form(); ?>
-<?php endif; ?>
+		<section id="primary" class="site-content">
+			<div id="content" role="main">
 
+			<?php if ( have_posts() ) : ?>
+
+				<header class="page-header">
+					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'melville' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				</header>
+
+				<?php melville_content_nav( 'nav-above' ); ?>
+
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php get_template_part( 'content', 'search' ); ?>
+
+				<?php endwhile; ?>
+
+				<?php melville_content_nav( 'nav-below' ); ?>
+
+			<?php else : ?>
+
+				<?php get_template_part( 'no-results', 'search' ); ?>
+
+			<?php endif; ?>
+
+			</div><!-- #content -->
+		</section><!-- #primary .site-content -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
