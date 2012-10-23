@@ -34,11 +34,11 @@ function arl_kottke_archives($month_separator = ' ', $month_format = 'M')
 			{
 				if (strlen($output))
 				{
-					$output .= "<br />\n<span class=\"archives\"><a href=\"http://www.daltonrooney.com/weblog/$month->Year\">" . $month->Year . "</a>:</span>&nbsp;";
+					$output .= "<br />\n<strong>" . $month->Year . ":</strong>&nbsp;";
 				}
 				else
 				{
-					$output .= "\n<span class=\"archives\"><a href=\"http://www.daltonrooney.com/weblog/$month->Year\">" . $month->Year . "</a>:</span>&nbsp;";
+					$output .= "\n<strong>" . $month->Year . ":</strong>&nbsp;";
 				}
 			}
 

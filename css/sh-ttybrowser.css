@@ -1,0 +1,27 @@
+#site-title a {
+	opacity: 1;
+}
+
+div#site-description {
+	opacity: 1;
+}
+
+#sociallinks img {
+	svg { overflow: hidden; }
+}
+
+#menu div.menu li a, #menu div.menu-footer li a {
+	opacity: 1;
+}
+
+#content h1.entry-title, #content h1.page-title, #content h2.entry-title {
+	opacity: 1;
+}
+
+.format-link .entry-title a {
+	opacity: 1;
+}
+
+.format-link .entry-title a {
+	opacity: 1;
+}

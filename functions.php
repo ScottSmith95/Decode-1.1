@@ -2,7 +2,7 @@
 /**
  * Based on TwentyTen functions and definitions
  **/
- 
+ add_theme_support( 'post-formats', array( 'link') );
 //include 'plugins/drop-caps/wp_drop_caps.php';
 if (!function_exists('arl_kottke_archives')) {
 include 'plugins/arl_kottke_archives.php';
@@ -59,7 +59,23 @@ function twentyten_setup() {
 	) );
 }
 endif;
-
+/*-----------------------------------------------------------------------------------*/
+/* Register & enqueue stylesheets
+/*-----------------------------------------------------------------------------------*/
+ 
+add_action( 'init', 'wap8_google_fonts' );
+ 
+if ( !function_exists( 'wap8_google_fonts' ) ) {
+	function wap8_google_fonts() {
+		if ( !is_admin() ) { // we do not want this to load in the dashboard
+			// register Google Fonts stylesheet
+			wp_register_style( 'wap8_google-fonts', 'http://fonts.googleapis.com/css?family=Droid+Sans+Mono', '', '', 'screen' );
+ 
+			// enqueue Google Fonts stylesheet
+			wp_enqueue_style( 'wap8_google-fonts' );
+		}
+	}
+}
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
@@ -97,7 +113,6 @@ add_filter( 'excerpt_length', 'twentyten_excerpt_length' );
 function twentyten_continue_reading_link() {
 	return ' <a href="'. get_permalink() . '">' . __( 'continue reading', 'twentyten' ) . '</a>';
 }
-
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and twentyten_continue_reading_link().
  *
@@ -196,44 +211,56 @@ function twentyten_comment( $comment, $args, $depth ) {
 }
 endif;
 
-/**
- * Register widgetized areas, including two widget-ready columns in the footer.
- *
- * To override twentyten_widgets_init() in a child theme, remove the action hook and add your own
- * function tied to the init hook.
- *
- * @since Twenty Ten 1.0
- * @uses register_sidebar
- */
-function twentyten_widgets_init() {
-	
+function print_post_title() {
 
-	// Area 3, located in the footer. Empty by default.
-	register_sidebar( array(
-		'name' => __( 'First Footer Widget Area', 'twentyten' ),
-		'id' => 'first-footer-widget-area',
-		'description' => __( 'Footer Widget - left column', 'twentyten' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+global $post;
 
-	// Area 4, located in the footer. Empty by default.
-	register_sidebar( array(
-		'name' => __( 'Second Footer Widget Area', 'twentyten' ),
-		'id' => 'second-footer-widget-area',
-		'description' => __( 'Footer Widget - across the bottom', 'twentyten' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+$thePostID = $post->ID;
 
+$post_id = get_post($thePostID);
+
+$title = $post_id->post_title;
+
+$perm = get_permalink($post_id);
+
+$post_keys = array(); $post_val = array();
+
+$post_keys = get_post_custom_keys($thePostID);
+
+ 
+
+if (!empty($post_keys)) {
+
+foreach ($post_keys as $pkey) {
+
+if ($pkey=='url1' || $pkey=='title_url' || $pkey=='url_title') {
+
+$post_val = get_post_custom_values($pkey);
 
 }
-/** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
-add_action( 'widgets_init', 'twentyten_widgets_init' );
+
+}
+
+if (empty($post_val)) {
+
+$link = $perm;
+
+} else {
+
+$link = $post_val[0];
+
+}
+
+} else {
+
+$link = $perm;
+
+}
+
+
+echo '<h2 class="entry-title"><a href="'.$link.'" rel="bookmark" title="'.$title.'">'.$title.'</a></h2>';
+
+}
 
 /**
  * Removes the default styles that are packaged with the Recent Comments widget.
@@ -293,4 +320,58 @@ function twentyten_posted_in() {
 	);
 }
 endif;
-?>
+
+// dropcaps
+function theme_shortcode_dropcaps($atts, $content = null, $code) {
+	return '<span class="dropcap">' . do_shortcode($content) . '</span>';
+}
+add_shortcode('dropcap', 'theme_shortcode_dropcaps');
+
+
+//build out our Portfolio Theme options
+
+add_option("melville_theme_footer", 'show'); 
+
+$melville_footer = get_option('melville_theme_footer'); 
+define('melville_footer',$melville_footer);
+
+
+// create the admin menu
+
+// hook in the action for the admin options page
+
+
+add_action('admin_menu', 'add_melville_theme_option_page');
+
+function add_melville_theme_option_page() {
+// hook in the options page function
+add_theme_page('Melville Theme Options', 'Melville Theme Options', 'manage_options', __FILE__, 'melville_theme_options_page');
+}
+
+function melville_theme_options_page() { ?>
+
+<form method="post" action="options.php">
+
+<?php wp_nonce_field('update-options'); ?>
+<h3>Theme options</h3>
+<table class="form-table">
+<tr valign="top">
+<th scope="row">Show Raygun credit in the footer (we appreciate it!)</th>
+<td><select name="melville_theme_footer" value="<?php $melville_footer;?>" />
+	<option value="show" <?php if(melville_footer == show) echo " selected='selected'";?>>True</option>
+	<option value="hide" <?php if(melville_footer == hide) echo " selected='selected'";?>>False</option>
+</select>
+</td>
+</tr>	
+</table>
+
+<input type="hidden" name="page_options" value="melville_theme_footer" />
+<input type="hidden" name="action" value="update" />	
+<p class="submit">
+<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
+</p>
+</form>
+
+<p>Melville theme for WordPress, made by <a href="http://madebyraygun.com">Raygun</a>.
+</div>
+<?php } ?>

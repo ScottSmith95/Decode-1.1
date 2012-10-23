@@ -1,9 +1,9 @@
 /*
-Theme Name: Melville
+Theme Name: Decode
 Theme URI: http://madebyraygun.com/labs/melville
 Description: A clean journal theme with great typography
-Version: 1.0
-Author: Dalton Rooney
+Version: 1.1
+Author: Dalton Rooney and Scott Smith
 Author URI: http://madebyraygun.com
 Tags: clean, basic, typography, minimalist, white, single column
 
@@ -45,10 +45,10 @@ a img { border:none } /* Gets rid of IE's blue borders */
 /* @group Body */
 
 body {
-	font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
-	font-size: 0.9em;
-	color: #555555;
-	background: #eeeeee url(images/bg.png);
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-size: 0.95em;
+	color: black;
+	background: #E3E5E8;
 	text-align: left;
 	line-height: 1.3em;
 	margin: 0;
@@ -57,17 +57,11 @@ body {
 
 div#wrapper {
 	width: 650px;
-	background-color: #ffffff;
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 auto -40px;
+	margin: 0 auto -37px;
 	padding: 20px 80px 0 80px;
-	border-right: 1px solid #cccccc;
-	border-left: 1px solid #cccccc;
-	-moz-box-shadow: 1px 0 20px #dddddd;
-	-webkit-box-shadow: 1px 0 20px #dddddd;
-	box-shadow: 1px 0 20px #dddddd;
 	overflow: hidden;
 }
 
@@ -104,16 +98,38 @@ h1, h2, h3, h4, h5, h6 { 		font-weight:normal; 		margin: 15px 0;
 p {
 	margin:  0 0 20px 0;
 	line-height: 1.5em;
+	color: #444444;
 }
 
-a {color: #777777;}
+a {
+	color: #009BCD;
+	transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	-webkit-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	-moz-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	-o-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	-ms-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	text-decoration: none;
+	border-bottom: 0 solid rgba(69,69,69,0);
+}
 
-a:hover {color: #555555;}
+a:hover {
+	color: #009BCD;
+	border-bottom: 1px solid rgba(0,153,204,1);
+}
+
+a:active {
+	color: #444444;
+	border-bottom: 1px solid rgba(69,69,69,1);
+}
+
+img:hover {
+	border-bottom: none;
+}
 
 blockquote {
 	margin: 30px 0 0 0;
 	padding: 0 0 0 30px;
-	border-left: 1px solid #eee;
+	border-left: 1px solid #009BCD;
 	font-style: italic;
 }
 
@@ -154,26 +170,19 @@ hr {
 }
 
 #content div.post {
-	margin: 0 0 70px 0;
+	margin: 0 0 50px 0;
+	padding: 20px 20px 0px 20px;
 }
 
-#content div.post p:first-of-type:first-letter{
+span.dropcap{
 	font-weight:bold;
-	font-family: 'OFL Sorts Mill Goudy TT', Georgia, serif;	
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-weight: 200;	
 	float:left;
 	font-size: 3em;
 	line-height:1em;
-	margin: -2px 2px -7px 0;
+	margin: 8px 2px -10px 0;
 	position:relative;	
-}
-
-#content div.post p.wp-caption-text:first-of-type:first-letter {
-	font-size: 12px;
-	margin: 0;
-	font-weight:normal;
-	font-family: Georgia, serif;
-	float: none;
-	display: inline;
 }
 
 #content ul, #content ol {
@@ -194,7 +203,7 @@ hr {
 	margin: 20px 0;
 	padding: 10px;
 	background-color: #fdfdfd;	
-	border: 1px solid #eeeeee;
+	border: 1px solid #009BCD;
 }
 
 #content address {
@@ -206,16 +215,53 @@ hr {
 	font-style: italic;
 }
 
-#content h1.entry-title, #content h1.page-title, #content h2.entry-title{
+#content h1.entry-title, #content h1.page-title, #content h2.entry-title {
 	text-align: center;
 	margin: 0 0 30px 0;
 	font-weight: normal;
-	font-family: 'OFLSortsMillGoudyRegular', Georgia, serif;	
-	font-size: 1.8em;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-weight: 200;
+	font-size: 30px;
 	line-height:1.2em;
 	text-decoration: none;
-	color: #555555;
+	color: #444444;
 	clear: both;
+	-webkit-animation: fade-in 1s ease-in-out 1s;
+	-moz-animation: fade-in 1s ease-in-out 1s;
+	-ms-animation: fade-in 1s ease-in-out 1s;
+	animation: fade-in 1s ease-in-out 1s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	opacity: 0;
+}
+
+#content h1.page-title {
+	margin-top: 15px;
+}
+
+.format-link .entry-title a {
+	text-decoration: none;
+	border-bottom: 1px solid #444444;
+	-webkit-animation: fade-in 1s ease-in-out 1s;
+	-moz-animation: fade-in 1s ease-in-out 1s;
+	-ms-animation: fade-in 1s ease-in-out 1s;
+	animation: fade-in 1s ease-in-out 1s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	opacity: 0;
+}
+
+.format-link .entry-title a:hover {
+	border-bottom: 1px solid #0099CC;
+}
+
+.format-link .entry-title a:active {
+	color: #444444;
+	border-bottom: 1px solid #444444;
 }
 
 #content abbr, #content acronym {
@@ -236,10 +282,24 @@ div#content {
 	margin: 0 0 20px 0;
 }
 
+#tweetbutton {
+	margin: 35px 0 0 0;
+}
+
 #content div.post p.date, #content div.post p.post-meta {
-	margin: 30px 0 0 0;
-	padding-bottom: 40px;
-	background: url(images/post-sep.png) no-repeat center bottom;
+	margin: 40px 10% 0 10%;
+	padding-bottom: 10px;
+	color: #444444;
+	border-bottom: 1px solid #009BCD;
+}
+
+p.date a {
+	color: #9f9f9f;
+	border-bottom: none;
+}
+
+p.date a:hover {
+	color: #009BCD;
 }
 
 #content div.post p.post-meta {
@@ -247,16 +307,19 @@ div#content {
 }
 
 .single #content div.post p.date {
-	font-size: 1em;
-	margin: 40px 0 5px 0;
+	font-size: 0.9em;
+	margin: 5px 0 5px 0;
 	padding: 0;
+	padding-bottom: 10px;
 	background: none;
 }
 
 .page #content h2 {
-	font-family: 'OFLSortsMillGoudyRegular', Georgia, serif;	margin: 35px 0 10px;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-weight: 200;	
+	margin: 35px 0 10px;
 	font-size: 18px;
-	color: #555555;
+	color: #444444;
 }
 
 .page.page-template-archives-php  #content h2 {
@@ -269,18 +332,32 @@ label.screen-reader-text {
 }
 
 
-.entry-title a, .page-title a{
-	color: #555555;
+.entry-title a, .page-title a {
+	-webkit-animation: fade-in 1s ease-in-out 1s;
+	-moz-animation: fade-in 1s ease-in-out 1s;
+	-ms-animation: fade-in 1s ease-in-out 1s;
+	animation: fade-in 1s ease-in-out 1s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	color: #444444;
 	text-decoration: none;
+}
+
+.entry-title a:hover, .page-title a:hover {
+	color: #009BCD;
 }
 
 #content div.post p.date, p.post-meta {
 	font-size: .8em;
 	clear: both;
+	color: #444444;
 }
 
 a#cancel-comment-reply-link {
-	font-family: 'helvetica neue',helvetica, arial,sans-serif;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-size: 11px;
 	margin: 0 10px;
 }
@@ -322,28 +399,153 @@ br.clear { clear:both; display:block; height:1px; margin:-1px 0 0 0 } /* Use thi
 /* @group Header */
 
 div#header {
-	margin: 0 0 60px 0;
-	padding: 0 0 20px 0;
+	margin: 0 auto;
+	padding: 0 0 0 0;
 	width: 650px;
 	color: #777777;
-	border-bottom: 1px solid #bbbbbb;
+	border-bottom: 1px solid #009BCD;
+	text-align: center;
 }
 
 #site-title {
-	margin: 40px 0 20px 0;
+	margin: 20px 0 10px 0;
 	text-align: center;
 }
 
 #site-title a {
-	font-family: 'OFLSortsMillGoudyItalic', Georgia, sans;	font-size: 60px;
-	font-style: italic;
+	font-family: 'Droid Sans Mono', sans-serif;
+	font-size: 60px;
+	font-style: none;
 	text-decoration: none;
-	color: #555555;
+	-webkit-transition: text-shadow, color 0.5s, 0.5s;
+	-moz-transition: text-shadow, color 0.5s, 0.5s;
+    -ms-transition: text-shadow, color 0.5s, 0.5s;
+	-o-transition: text-shadow, color 0.5s, 0.5s;
+	transition: text-shadow, color 0.5s, 0.5s;
+	-webkit-animation: fly-in 1s 0.9s alternate;
+	-moz-animation: fly-in 1s 0.9s alternate;
+	-ms-animation: fly-in 1s 0.9s alternate;
+	animation: fly-in 1s 0.9s alternate;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	color: #444444;
+	border-bottom: none;
+	text-shadow: 0 0 0 rgba(0,0,0,0);
+	position: relative;
+	opacity: 0;
+}
+
+#site-title a:hover {
+	color: #878787;
+	text-shadow: 0 0 8px rgba(91,91,91,0.6);
+}
+
+#site-title a:active {
+	color: #676767;
+	text-shadow: 0px 0px 6px rgba(91,91,91,0.9);
+	
+}
+
+@-webkit-keyframes fly-in {
+	0% {top: -250px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+			
+@-moz-keyframes fly-in {
+	0% {top: -250px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+
+@-ms-keyframes fly-in {
+	0% {top: -250px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+			
+@keyframes fly-in {
+	0% {top: -250px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+
+@-webkit-keyframes fade-in {
+	0% {opacity: 0;}
+	100%{opacity: 0.99;}
+}
+			
+@-moz-keyframes fade-in {
+	0% {opacity: 0;}
+	100%{opacity: 0.99;}
+}
+
+@-ms-keyframes fade-in {
+	0% {opacity: 0;}
+	100%{opacity: 0.99;}
+}
+			
+@keyframes fade-in {
+	0% {opacity: 0;}
+	100%{opacity: 0.99;}
 }
 
 div#site-description {
-	text-align: center;	
-}	
+	text-align: center;
+	-webkit-animation: fly-in 1s ease-in-out 0.5s;
+	-moz-animation: fly-in 1s ease-in-out 0.5s;
+	-ms-animation: fly-in 1s ease-in-out 0.5s;
+	animation: fly-in 1s ease-in-out 0.5s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	position: relative;
+	opacity: 0;
+}
+
+#sociallinksmobile {
+	display: none;
+}
+
+#sociallinks {
+	display: inline;
+}
+
+#sociallinks ol {
+	list-style: none;
+	text-align: center;
+	margin: 20px auto 20px auto;
+}
+
+#sociallinks ol a {
+	border-bottom: none;
+}
+
+#sociallinks img {
+    -webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+	-webkit-animation: fly-in 1s ease-in-out 0.4s;
+	-moz-animation: fly-in 1s ease-in-out 0.4s;
+	-ms-animation: fly-in 1s ease-in-out 0.4s;
+	animation: fly-in 1.3s ease-in-out 0.4s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	margin-left: 0.4%;
+	margin-right: 0.4%;
+	position: relative;
+}
+
+#sociallinks img:hover {
+	opacity: 0.7;
+}
+
+#sociallinks img:active {
+	opacity: 0.5;
+}
 
 /* @end */
 
@@ -378,7 +580,7 @@ input#searchsubmit {
 
 input#searchsubmit:hover {
 border-color: #aaaaaa;
-	color: #555555;
+	color: #444444;
 }
 
 .page-template-archives-php ul.taxonomy {
@@ -413,7 +615,6 @@ border-color: #aaaaaa;
 .archive #content div.post {
 	margin: 0 0 60px 0;
 	padding: 0 0 10px 0;
-	background: url(images/post-sep.png) no-repeat center bottom;
 }
 
 /* @end */
@@ -468,9 +669,11 @@ form#commentform {
 }
 
 h3#reply-title, h3#comments-title {
-	font-family: 'OFL Sorts Mill Goudy TT', Georgia, serif;	margin: 50px 0 0 0;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-weight: 200;
 	font-size: 18px;
-	color: #555555;
+	color: #444444;
+	margin: 20px 0 10px 0;
 }
 
 p.comment-notes {
@@ -514,7 +717,7 @@ p.comment-notes {
 
 #commentform input#submit:hover {
 	border-color: #aaaaaa;
-	color: #555555;
+	color: #444444;
 }
 
 img.avatar {
@@ -566,37 +769,91 @@ p.form-allowed-tags {
 /* @group Menu */
 
 #menu {
-	width:810px;	
+		
 	margin: 0 auto;
-	border-right: 1px solid #cccccc;
-	border-left: 1px solid #cccccc;
 	-moz-box-shadow: 1px 4 20px #dddddd;
 	-webkit-box-shadow: 1px 4 20px #dddddd;
 	box-shadow: 1px 4 20px #dddddd;
 }
 
-#menu div.menu, #menu div.menu-footer {	background-color: #dadada;		border-bottom-style: double; 
-	border-bottom-color: #bbb; 
-	border-bottom-width: 3px;
-	border-top-style: double; 
-	border-top-color: #bbb; 
-	border-top-width: 3px;}#menu div.menu ul, #menu div.menu-footer ul {	margin: 0 0 0 0;	padding: 10px 0 6px;	border-bottom: 1px solid #dddddd;
-	text-align: center;}#menu div.menu li, #menu div.menu-footer li {	display: inline;	margin: 0 15px;}#menu div.menu li a, #menu div.menu-footer li a {	text-decoration: none;	font-family: 'OFL Sorts Mill Goudy TT', Georgia, serif;	font-size: 18px;	font-style: italic;	text-decoration: none;	color: #555555;}#menu div.menu li a:hover, #menu div.menu-footer li a:hover {	color: #333333;}#menu div.menu ul li.current_page_item a, #menu div.menu-footer ul li.current_page_item a{	text-decoration: underline;	
-	color: #333333;
+#menu div.menu, #menu div.menu-footer {	
+
+	}
+
+#menu div.menu ul, #menu div.menu-footer ul {
+	margin: 0 0 0 0;
+	padding: 0 0 10px;
+	text-align: center;
+}
+
+#menu div.menu li, #menu div.menu-footer li {
+	display: inline;
+	margin: 0 15px;
+}
+
+#menu div.menu li a, #menu div.menu-footer li a {
+	text-decoration: none;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	text-decoration: none;
+	color: #444444;
+	border-bottom: none;
+	-webkit-animation: fly-in 1s ease-in-out 0.2s;
+	-moz-animation: fly-in 1s ease-in-out 0.2s;
+	-ms-animation: fly-in 1s ease-in-out 0.2s;
+	animation: fly-in 1s ease-in-out 0.2s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	position: relative;
+	opacity: 0;
+}
+
+#menu div.menu li a:hover, #menu div.menu-footer li a:hover {
+	color: #009BCD;
+}
+
+#menu div.menu li a:active, #menu div.menu-footer li a:active {
+	color: #444;
+}
+
+#menu div.menu-footer ul li.current_page_item a:hover {
+	color: #000;
+}
+
+#menu div.menu ul li.current_page_item a, #menu div.menu-footer ul li.current_page_item a{
+	text-decoration: none;
+	border-bottom: 0 solid #000;
+}
+
+#menu div.menu ul li.current_page_item a, #menu div.menu-footer ul li.current_page_item a {
+	transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	-webkit-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	-moz-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	-o-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	-ms-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	border-bottom: 1px solid rgba(0,0,0,0);
+}
+
+#menu div.menu ul li.current_page_item a:hover, #menu div.menu-footer ul li.current_page_item a:hover {
+	color: #000;
+	border-bottom: 1px solid rgba(0,0,0,1);
 }
 
 /* @end */
 
 /* @group Footer */
 
- .push, #footer {
+.push, #footer {
 	height: 40px;
 	clear: both;
+	display: none;
 }
 
 div#footer {
 	width: 810px;
-	margin: 0 auto;
+	margin: 0px auto;
 	padding: 20px 0 0 0;
 	background-color: #fafafa;
 	border-top: 1px solid #dddddd;
@@ -605,6 +862,7 @@ div#footer {
 	-moz-box-shadow: 1px 4 20px #dddddd;
 	-webkit-box-shadow: 1px 4 20px #dddddd;
 	box-shadow: 1px 4 20px #dddddd;
+	display: none;
 }
 
 #footer p.credits {
@@ -614,7 +872,93 @@ div#footer {
 
 span.older-posts a, span.newer-posts a{
 	text-decoration: none;
-	margin-right: 20px;
+	margin: 0 15% 2% 15%;
+}
+
+span.older-posts a {
+	float: left;
+}
+
+span.newer-posts a {
+	float: right;
+}
+
+@media only screen and (max-device-width: 699px) {
+body {
+	font-size: 2em;
+}
+
+div#header {
+	width: auto;
+	padding-bottom: 1%;
+	margin: 0 2%;
+	border-bottom: 2px solid #009BCD;
+}
+
+#sociallinks {
+	display: none;
+}
+
+#sociallinksmobile {
+	display: block;
+	margin: 3% 0 2%;
+	-webkit-animation: fly-in 1.15s ease-in-out 0.4s;
+	-moz-animation: fly-in 1.15s ease-in-out 0.4s;
+	-ms-animation: fly-in 1.15s ease-in-out 0.4s;
+	animation: fly-in 1.15s ease-in-out 0.4s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	position: relative;
+}
+
+#sociallinksmobile a {
+	border-bottom: none;
+}
+
+div#wrapper {
+	width: 98%;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -37px;
+    padding: 10px 0 0 0;
+    overflow: hidden;
+}
+
+#site-title a {
+	margin-top: 0;
+	margin-bottom: 2%;
+	font-size: 80px;
+}
+
+#site-description {
+	font-size: 40px;
+}
+
+#content h1.entry-title, #content h1.page-title {
+	font-size: 70px;
+}
+
+#content h2.entry-title, .format-link .entry-title a {
+	font-size: 65px;
+}
+
+#menu div.menu li a, #menu div.menu-footer li a {
+	font-size: 45px;	
+}
+
+#content {
+	padding: 0 3% 0 3%;
+	font-size: 45px;
+}
+
+p.date a {
+	font-size: 40px;
+}
+
 }
 
 /* @end */

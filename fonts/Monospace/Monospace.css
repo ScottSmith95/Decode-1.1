@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'Monospace';
+	src: url('DroidSansMono.ttf');
+	src: local('☺'), url('DroidSansMono.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+

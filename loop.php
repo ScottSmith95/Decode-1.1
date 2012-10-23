@@ -68,7 +68,7 @@
 
 				<a href="<?php echo get_term_link( _x('gallery', 'gallery category slug', 'twentyten'), 'category' ); ?>" title="<?php esc_attr_e( 'View posts in the Gallery category', 'twentyten' ); ?>"><?php _e( 'More Galleries', 'twentyten' ); ?></a>
 				|
-				<?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?>
+				
 				<?php edit_post_link( __( 'Edit', 'twentyten' ), '|', '' ); ?>
 
 <?php /* How to display posts in the asides category */ ?>
@@ -83,14 +83,23 @@
 
 				<?php twentyten_posted_on(); ?>
 				|
-				<?php twentyten_posted_on(); ?>&nbsp;&nbsp;<?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?>
+				<?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?>
 				<?php edit_post_link( __( 'Edit', 'twentyten' ), '| ', '' ); ?>
 
+
+<?php /* How to display posts in the links category */ ?>
+				<?php elseif ( has_post_format( 'link' )): ?>
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<h2><?php print_post_title() ?></h2>
+					<?php the_content( __( 'continue reading &raquo;', 'twentyten' ) ); ?>
+					<p class="date"><a href="<?php the_permalink(); ?>">Committed on <?php twentyten_posted_on(); ?></a></p>
+					</div>
+			
 <?php /* How to display all other posts. */ ?>
 
 	<?php else : ?>
 	 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h2 class="entry-title"><?php the_title(); ?></h2>
 			
 
 	
@@ -99,6 +108,8 @@
 		<?php else : ?>
 			<?php the_content( __( 'continue reading &raquo;', 'twentyten' ) ); ?>
 	
+
+		<p class="date"><a href="<?php the_permalink(); ?>">Committed on <?php twentyten_posted_on(); ?></a></p>
 
 		<?php endif; ?>
 
