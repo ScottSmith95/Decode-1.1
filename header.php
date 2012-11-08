@@ -14,7 +14,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<!--[if IE]>
+<!--[if lt IE 10]>
 	<link rel="stylesheet" type="text/css" href="http://beyondtheco.de/wp-content/themes/Decode/css/sh-ttybrowser.css" />
 <![endif]-->
 <link rel="shortcut icon" href="http://beyondtheco.de/wp-content/themes/Decode/images/favicon.ico">
