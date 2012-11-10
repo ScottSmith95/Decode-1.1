@@ -45,13 +45,17 @@ a img { border:none } /* Gets rid of IE's blue borders */
 /* @group Body */
 
 body {
-	font: 0.95em 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-size: 0.95em;
 	color: black;
-	background: #E3E5E8;
+	background: #444444;
+	background-image: url('http://beyondtheco.de/podcast/wp-content/themes/Decode/images/Background.jpg?1');
+	background-repeat: repeat;
+	background-size: 250px;
 	text-align: left;
 	line-height: 1.3em;
 	margin: 0;
-	text-shadow: #fff 0 0 1px;
+	text-shadow: none;
 }
 
 div#wrapper {
@@ -97,14 +101,16 @@ h1, h2, h3, h4, h5, h6 { 		font-weight:normal; 		margin: 15px 0;
 p {
 	margin:  0 0 20px 0;
 	line-height: 1.5em;
-	color: #444444;
+	color: #808080;
 }
 
 a {
 	color: #009BCD;
-	transition: color, border-bottom 0.4s, 0.4s ease-in-out;
-	-webkit-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
-	-moz-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	transition: color, border-bottom 0.4s, 0.4s ease-out;
+	-webkit-transition: color, border-bottom 0.4s, 0.4s ease-out;
+	-moz-transition: color, border-bottom 0.4s, 0.4s ease-out;
+	-o-transition: color, border-bottom 0.4s, 0.4s ease-out;
+	-ms-transition: color, border-bottom 0.4s, 0.4s ease-out;
 	text-decoration: none;
 	border-bottom: 0 solid rgba(69,69,69,0);
 }
@@ -115,7 +121,7 @@ a:hover {
 }
 
 a:active {
-	color: #444444;
+	color: #808080;
 	border-bottom: 1px solid rgba(69,69,69,1);
 }
 
@@ -172,13 +178,14 @@ hr {
 }
 
 span.dropcap{
-	font-weight: bold;
+	font-weight:bold;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-weight: 200;	
-	float: left;
+	float:left;
 	font-size: 3em;
 	line-height:1em;
 	margin: 8px 2px -10px 0;
-	position: relative;	
+	position:relative;	
 }
 
 #content ul, #content ol {
@@ -215,15 +222,21 @@ span.dropcap{
 	text-align: center;
 	margin: 0 0 30px 0;
 	font-weight: normal;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-weight: 200;
 	font-size: 30px;
 	line-height:1.2em;
 	text-decoration: none;
-	color: #444444;
+	color: #808080;
 	clear: both;
-	-webkit-animation: fade-in 1s ease-in-out 1s forwards;
-	-moz-animation: fade-in 1s ease-in-out 1s forwards;
-	animation: fade-in 1s ease-in-out 1s forwards;
+	-webkit-animation: fade-in 1s ease-in-out 1s;
+	-moz-animation: fade-in 1s ease-in-out 1s;
+	-ms-animation: fade-in 1s ease-in-out 1s;
+	animation: fade-in 1s ease-in-out 1s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 	opacity: 0;
 }
 
@@ -233,10 +246,15 @@ span.dropcap{
 
 .format-link .entry-title a {
 	text-decoration: none;
-	border-bottom: 1px solid #444444;
-	-webkit-animation: fade-in 1s ease-in-out 1s forwards;
-	-moz-animation: fade-in 1s ease-in-out 1s forwards;
-	animation: fade-in 1s ease-in-out 1s forwards;
+	border-bottom: 1px solid #808080;
+	-webkit-animation: fade-in 1s ease-in-out 1s;
+	-moz-animation: fade-in 1s ease-in-out 1s;
+	-ms-animation: fade-in 1s ease-in-out 1s;
+	animation: fade-in 1s ease-in-out 1s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 	opacity: 0;
 }
 
@@ -245,8 +263,8 @@ span.dropcap{
 }
 
 .format-link .entry-title a:active {
-	color: #444444;
-	border-bottom: 1px solid #444444;
+	color: #808080;
+	border-bottom: 1px solid #808080;
 }
 
 #content abbr, #content acronym {
@@ -274,7 +292,7 @@ div#content {
 #content div.post p.date, #content div.post p.post-meta {
 	margin: 40px 10% 0 10%;
 	padding-bottom: 10px;
-	color: #444444;
+	color: #808080;
 	border-bottom: 1px solid #009BCD;
 }
 
@@ -300,10 +318,11 @@ p.date a:hover {
 }
 
 .page #content h2 {
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-weight: 200;	
 	margin: 35px 0 10px;
 	font-size: 18px;
-	color: #444444;
+	color: #808080;
 }
 
 .page.page-template-archives-php  #content h2 {
@@ -317,11 +336,16 @@ label.screen-reader-text {
 
 
 .entry-title a, .page-title a {
-	-webkit-animation: fade-in 1s ease-in-out 1s forwards;
-	-moz-animation: fade-in 1s ease-in-out 1s forwards;
-	animation: fade-in 1s ease-in-out 1s forwards;
+	-webkit-animation: fade-in 1s ease-in-out 1s;
+	-moz-animation: fade-in 1s ease-in-out 1s;
+	-ms-animation: fade-in 1s ease-in-out 1s;
+	animation: fade-in 1s ease-in-out 1s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 	opacity: 0;
-	color: #444444;
+	color: #808080;
 	text-decoration: none;
 }
 
@@ -332,10 +356,11 @@ label.screen-reader-text {
 #content div.post p.date, p.post-meta {
 	font-size: .8em;
 	clear: both;
-	color: #444444;
+	color: #808080;
 }
 
 a#cancel-comment-reply-link {
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-size: 11px;
 	margin: 0 10px;
 }
@@ -385,6 +410,41 @@ div#header {
 	text-align: center;
 }
 
+#site-logo img {
+	height: 25%;
+	width: auto;
+	text-align: center;
+	-webkit-transition: box-shadow 0.5s;
+	-moz-transition: box-shadow 0.5s;
+    -ms-transition: box-shadow 0.5s;
+	-o-transition: box-shadow 0.5s;
+	transition: box-shadow 0.5s;
+	-webkit-animation: fly-in 1s 1.1s alternate;
+	-moz-animation: fly-in 1s 1.1s alternate;
+	-ms-animation: fly-in 1s 1.1s alternate;
+	animation: fly-in 1s 1.1s alternate;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	position: relative;
+	border-radius: 300px;
+	box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+	#site-logo img:hover {
+		box-shadow: 0 0 25px rgba(230,230,230,0.4);
+	}
+	
+	#site-logo img:active {
+		box-shadow: 0 0 17px rgba(230,230,230,0.4);
+	}
+	
+	#site-logo a:hover {
+		border-bottom: none;
+	}
+
 #site-title {
 	margin: 20px 0 10px 0;
 	text-align: center;
@@ -392,16 +452,23 @@ div#header {
 
 #site-title a {
 	font-family: 'Droid Sans Mono', sans-serif;
-	font-size: 60px;
+	font-size: 45px;
 	font-style: none;
 	text-decoration: none;
 	-webkit-transition: text-shadow, color 0.5s, 0.5s;
 	-moz-transition: text-shadow, color 0.5s, 0.5s;
+    -ms-transition: text-shadow, color 0.5s, 0.5s;
+	-o-transition: text-shadow, color 0.5s, 0.5s;
 	transition: text-shadow, color 0.5s, 0.5s;
-	-webkit-animation: fly-in 1s ease-in-out 0.9s forwards;
-	-moz-animation: fly-in 1s ease-in-out 0.9s forwards;
-	animation: fly-in 1s ease-in-out 0.9s forwards;
-	color: #444444;
+	-webkit-animation: fly-in 1s 0.9s alternate;
+	-moz-animation: fly-in 1s 0.9s alternate;
+	-ms-animation: fly-in 1s 0.9s alternate;
+	animation: fly-in 1s 0.9s alternate;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	color: #808080;
 	border-bottom: none;
 	text-shadow: 0 0 0 rgba(0,0,0,0);
 	position: relative;
@@ -429,6 +496,11 @@ div#header {
 	100%{top: 0px; opacity: 1;}
 }
 
+@-ms-keyframes fly-in {
+	0% {top: -250px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+			
 @keyframes fly-in {
 	0% {top: -250px; opacity: 0;}
 	100%{top: 0px; opacity: 1;}
@@ -444,6 +516,11 @@ div#header {
 	100%{opacity: 0.99;}
 }
 
+@-ms-keyframes fade-in {
+	0% {opacity: 0;}
+	100%{opacity: 0.99;}
+}
+			
 @keyframes fade-in {
 	0% {opacity: 0;}
 	100%{opacity: 0.99;}
@@ -451,9 +528,14 @@ div#header {
 
 div#site-description {
 	text-align: center;
-	-webkit-animation: fly-in 1s ease-in-out 0.7s forwards;
-	-moz-animation: fly-in 1s ease-in-out 0.7s forwards;
-	animation: fly-in 1s ease-in-out 0.7s forwards;
+	-webkit-animation: fly-in 1s ease-in-out 0.5s;
+	-moz-animation: fly-in 1s ease-in-out 0.5s;
+	-ms-animation: fly-in 1s ease-in-out 0.5s;
+	animation: fly-in 1s ease-in-out 0.5s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 	position: relative;
 	opacity: 0;
 }
@@ -470,11 +552,16 @@ div#site-description {
 	list-style: none;
 	text-align: center;
 	margin: 20px auto 20px auto;
-	-webkit-animation: fly-in 1s ease-in-out 0.4s forwards;
-	-moz-animation: fly-in 1s ease-in-out 0.4s forwards;
-	animation: fly-in 1.3s ease-in-out 0.4s forwards;
-	opacity: 0;
+	-webkit-animation: fly-in 1s ease-in-out 0.4s;
+	-moz-animation: fly-in 1s ease-in-out 0.4s;
+	-ms-animation: fly-in 1s ease-in-out 0.4s;
+	animation: fly-in 1.3s ease-in-out 0.4s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 	position: relative;
+	opacity: 0;
 }
 
 #sociallinks ol a {
@@ -484,6 +571,8 @@ div#site-description {
 #sociallinks img {
     -webkit-transition: opacity 0.5s ease-in-out;
 	-moz-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
 	transition: opacity 0.5s ease-in-out;
 	margin-left: 0.4%;
 	margin-right: 0.4%;
@@ -530,7 +619,7 @@ input#searchsubmit {
 
 input#searchsubmit:hover {
 border-color: #aaaaaa;
-	color: #444444;
+	color: #808080;
 }
 
 .page-template-archives-php ul.taxonomy {
@@ -619,9 +708,10 @@ form#commentform {
 }
 
 h3#reply-title, h3#comments-title {
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-weight: 200;
 	font-size: 18px;
-	color: #444444;
+	color: #808080;
 	margin: 20px 0 10px 0;
 }
 
@@ -666,7 +756,7 @@ p.comment-notes {
 
 #commentform input#submit:hover {
 	border-color: #aaaaaa;
-	color: #444444;
+	color: #808080;
 }
 
 img.avatar {
@@ -702,6 +792,7 @@ img.avatar {
 }
 
 #cancel-comment-reply-link {
+	font-family: ;
 }
 
 a.comment-reply-link {
@@ -741,13 +832,19 @@ p.form-allowed-tags {
 
 #menu div.menu li a, #menu div.menu-footer li a {
 	text-decoration: none;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	text-decoration: none;
-	color: #444444;
+	color: #808080;
 	border-bottom: none;
-	-webkit-animation: fly-in 1s ease-in-out 0.2s forwards;
-	-moz-animation: fly-in 1s ease-in-out 0.2s forwards;
-	animation: fly-in 1s ease-in-out 0.2s forwards;
+	-webkit-animation: fly-in 1s ease-in-out 0.2s;
+	-moz-animation: fly-in 1s ease-in-out 0.2s;
+	-ms-animation: fly-in 1s ease-in-out 0.2s;
+	animation: fly-in 1s ease-in-out 0.2s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 	position: relative;
 	opacity: 0;
 }
@@ -757,56 +854,69 @@ p.form-allowed-tags {
 }
 
 #menu div.menu li a:active, #menu div.menu-footer li a:active {
-	color: #444;
+	color: #808080;
 }
 
 #menu div.menu-footer ul li.current_page_item a:hover {
-	color: #000;
+	color: #009BCD;
 }
 
-#menu div.menu ul li.current_page_item a, #menu div.menu-footer ul li.current_page_item a {
+#menu div.menu ul li.current_page_item a, #menu div.menu-footer ul li.current_page_item a{
 	text-decoration: none;
-	border-bottom: none;
+	border-bottom: 0 solid #808080;
 }
 
 #menu div.menu ul li.current_page_item a, #menu div.menu-footer ul li.current_page_item a {
 	transition: color, border-bottom 0.4s, 0.4s ease-in-out;
 	-webkit-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
 	-moz-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	-o-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	-ms-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	border-bottom: none;
 }
 
 #menu div.menu ul li.current_page_item a:hover, #menu div.menu-footer ul li.current_page_item a:hover {
-	color: #000;
+	color: #009BCD;
 }
 
-@-webkit-keyframes shake {
-	0% {right: -7px;}
-	20% {right: 7px;}
-	40% {right: -7px;}
-	80% {right: 7px;}
-	100%{right: 0px;}
-}
+	@-webkit-keyframes shake {
+		0% {right: -7px;}
+		20% {right: 7px;}
+		40% {right: -7px;}
+		80% {right: 7px;}
+		100%{right: 0px;}
+	}
 				
-@-moz-keyframes shake {
-	0% {right: -7px;}
-	20% {right: 7px;}
-	40% {right: -7px;}
-	80% {right: 7px;}
-	100%{right: 0px;}
-}
-
-@keyframes shake {
-	0% {right: -7px;}
-	20% {right: 7px;}
-	40% {right: -7px;}
-	80% {right: 7px;}
-	100%{right: 0px;}
-}
+	@-moz-keyframes shake {
+		0% {right: -7px;}
+		20% {right: 7px;}
+		40% {right: -7px;}
+		80% {right: 7px;}
+		100%{right: 0px;}
+	}
 	
+	@-ms-keyframes shake {
+		0% {right: -7px;}
+		20% {right: 7px;}
+		40% {right: -7px;}
+		80% {right: 7px;}
+		100%{right: 0px;}
+	}
+				
+	@keyframes shake {
+		0% {right: -7px;}
+		20% {right: 7px;}
+		40% {right: -7px;}
+		80% {right: 7px;}
+		100%{right: 0px;}
+	}
+
 #menu div.menu ul li.current_page_item:hover, #menu div.menu-footer ul li.current_page_item:hover {
 	-webkit-animation: shake 0.3s;
 	-moz-animation: shake 0.5s;
+	-ms-animation: shake 0.5s;
 	animation: shake 0.5s;
+	color: #808080;
 	position: relative;
 }
 
@@ -871,9 +981,14 @@ div#header {
 #sociallinksmobile {
 	display: block;
 	margin: 3% 0 2%;
-	-webkit-animation: fly-in 1.15s ease-in-out 0.4s forwards;
-	-moz-animation: fly-in 1.15s ease-in-out 0.4s forwards;
-	animation: fly-in 1.15s ease-in-out 0.4s forwards;
+	-webkit-animation: fly-in 1.15s ease-in-out 0.4s;
+	-moz-animation: fly-in 1.15s ease-in-out 0.4s;
+	-ms-animation: fly-in 1.15s ease-in-out 0.4s;
+	animation: fly-in 1.15s ease-in-out 0.4s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 	opacity: 0;
 	position: relative;
 }
@@ -890,6 +1005,11 @@ div#wrapper {
     margin: 0 auto -37px;
     padding: 10px 0 0 0;
     overflow: hidden;
+}
+
+#site-logo img {
+	height: 30%;
+	margin-top: 4%;
 }
 
 #site-title a {

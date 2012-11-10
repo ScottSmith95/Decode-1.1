@@ -17,7 +17,7 @@
 <!--[if lt IE 10]>
 	<link rel="stylesheet" type="text/css" href="http://beyondtheco.de/wp-content/themes/Decode/css/sh-ttybrowser.css" />
 <![endif]-->
-<link rel="shortcut icon" href="http://beyondtheco.de/wp-content/themes/Decode/images/favicon.ico">
+<link rel="shortcut icon" href="http://podcast.beyondtheco.de/wp-content/themes/Decode/images/favicon.ico">
     <script type="text/javascript">
   WebFontConfig = {
     google: { families: [ 'Droid+Sans+Mono::latin' ] }
@@ -105,33 +105,34 @@ if(is_single() || is_page()) {
 <div id="wrapper">
 	<div id="header">
 		<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
+				<div id="site-logo"><a href="http://podcast.beyondtehco.de"><img src="http://beyondtheco.de/podcast/wp-content/themes/Decode/images/Between%20The%20Lines%20Alpha.png?1"></a></div>
 				<<?php echo $heading_tag; ?> id="site-title">
 						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 				</<?php echo $heading_tag; ?>>
-				<div id="site-description">by <a href="http://ScottHSmith.com">Scott Smith</a></div>
+				<div id="site-description">from <a href="http://ScottHSmith.com">Scott Smith</a> and <a href="https://twitter.com/jrlove7">Jackson Love</a></div>
 				<div id="sociallinks">
 			<ol> 
+					<a id="iTunesLink" href="https://itunes.apple.com/us/podcast/between-the-lines/id576245403">
+						<img src="http://podcast.beyondtheco.de/wp-content/themes/Decode/images/iTunes.svg"  height="30" width="30"/>
+					</a>
 					<a id="TwitterLink" href="http://twitter.com/BeyondTheCode">
-						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/Twitter.svg"  height="30" width="30"/>
+						<img src="http://podcast.beyondtheco.de/wp-content/themes/Decode/images/Twitter.svg"  height="30" width="30"/>
 					</a>
 					<a id="FacebookLink" href="https://www.facebook.com/BeyondTheCode">
-						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/Facebook.svg" height="30" width="30"/>
-					</a>
-					<a id="GooglePlusLink" href="http://plus.google.com/u/0/b/112495893888970542384/112495893888970542384/posts">
-						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/GooglePlus.svg"  height="30" width="30"/>
+						<img src="http://podcast.beyondtheco.de/wp-content/themes/Decode/images/Facebook.svg" height="30" width="30"/>
 					</a>
 			</ol>
 		</div>
 		<div id="sociallinksmobile">
 			<ol> 
+					<a id="iTunesLink" href="https://itunes.apple.com/us/podcast/between-the-lines/id576245403">
+						<img src="http://podcast.beyondtheco.de/wp-content/themes/Decode/images/iTunes.svg"  height="75" width="75"/>
+					</a>
 					<a id="TwitterLink" href="http://twitter.com/BeyondTheCode">
-						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/Twitter.svg"  height="75" width="75"/>
+						<img src="http://podcast.beyondtheco.de/wp-content/themes/Decode/images/Twitter.svg"  height="75" width="75"/>
 					</a>
 					<a id="FacebookLink" href="https://www.facebook.com/BeyondTheCode">
-						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/Facebook.svg" height="75" width="75"/>
-					</a>
-					<a id="GooglePlusLink" href="http://plus.google.com/u/0/b/112495893888970542384/112495893888970542384/posts">
-						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/GooglePlus.svg"  height="75" width="75"/>
+						<img src="http://podcast.beyondtheco.de/wp-content/themes/Decode/images/Facebook.svg" height="75" width="75"/>
 					</a>
 			</ol>
 		</div>
