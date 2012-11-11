@@ -94,6 +94,13 @@
 					<?php the_content( __( 'continue reading &raquo;', 'twentyten' ) ); ?>
 					<p class="date"><a href="<?php the_permalink(); ?>">Committed on <?php twentyten_posted_on(); ?></a></p>
 					</div>
+					
+<?php /* How to display posts in the quotes category */ ?>
+				<?php elseif ( has_post_format( 'quote' )): ?>
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php the_content( __( 'continue reading &raquo;', 'twentyten' ) ); ?>
+					<p class="date"><a href="<?php the_permalink(); ?>">Committed on <?php twentyten_posted_on(); ?></a></p>
+					</div>
 			
 <?php /* How to display all other posts. */ ?>
 

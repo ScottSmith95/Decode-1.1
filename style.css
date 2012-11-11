@@ -249,6 +249,29 @@ span.dropcap{
 	border-bottom: 1px solid #444444;
 }
 
+.format-quote p {
+	margin-top: 3%;
+	font-size: 2.6em;
+}
+
+.format-quote p:before { 
+	content: '\201C'; 
+	font-size: 1.3em;
+}
+
+.format-quote p:after { 
+	content: '\201D';
+	font-size: 1.3em;
+}
+
+.format-quote .date:before {
+	content: "";
+}
+
+.format-quote .date:after {
+	content: "";
+}
+
 #content abbr, #content acronym {
 	border-bottom: 1px dotted #ccc;
 }
