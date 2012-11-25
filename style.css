@@ -95,16 +95,16 @@ h1, h2, h3, h4, h5, h6 { 		font-weight:normal; 		margin: 15px 0;
 }
 
 p {
-	margin:  0 0 20px 0;
+	margin: 0 0 20px 0;
 	line-height: 1.5em;
 	color: #444444;
 }
 
 a {
 	color: #009BCD;
-	transition: color 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
 	-webkit-transition: color 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
 	-moz-transition: color 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
+	transition: color 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
 	text-decoration: none;
 	border-bottom: 0 solid rgba(69,69,69,0);
 }
@@ -117,10 +117,6 @@ a:hover {
 a:active {
 	color: #444444;
 	border-bottom: 1px solid rgba(69,69,69,1);
-}
-
-img:hover {
-	border-bottom: none;
 }
 
 blockquote {
@@ -217,7 +213,7 @@ span.dropcap{
 	font-weight: normal;
 	font-weight: 200;
 	font-size: 30px;
-	line-height:1.2em;
+	line-height: 1.2em;
 	text-decoration: none;
 	color: #444444;
 	clear: both;
@@ -501,13 +497,14 @@ div#site-description {
 }
 
 #sociallinks img {
-    -webkit-transition: opacity 0.5s ease-in-out;
-	-moz-transition: opacity 0.5s ease-in-out;
-	transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.4s ease-out;
+	-moz-transition: opacity 0.4s ease-out;
+	transition: opacity 0.4s ease-out;
 	height: 35px;
 	width: 35px;
 	margin-left: 0.4%;
 	margin-right: 0.4%;
+	border: none;
 }
 
 #sociallinks img:hover {
@@ -791,9 +788,9 @@ p.form-allowed-tags {
 }
 
 #menu div.menu ul li.current_page_item a, #menu div.menu-footer ul li.current_page_item a {
-	transition: color, border-bottom 0.4s, 0.4s ease-in-out;
-	-webkit-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
-	-moz-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	transition: color 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
+	-webkit-transition: color 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
+	-moz-transition: color 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
 }
 
 #menu div.menu ul li.current_page_item a:hover, #menu div.menu-footer ul li.current_page_item a:hover {
@@ -828,9 +825,9 @@ p.form-allowed-tags {
 }
 	
 #menu div.menu ul li.current_page_item:hover, #menu div.menu-footer ul li.current_page_item:hover {
-	-webkit-animation: shake 0.3s;
-	-moz-animation: shake 0.5s;
-	animation: shake 0.5s;
+	-webkit-animation: shake 0.3s ease;
+	-moz-animation: shake 0.3s ease;
+	animation: shake 0.3s ease;
 	position: relative;
 }
 
