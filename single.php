@@ -12,6 +12,13 @@ get_header(); ?>
 					<div id="tweetbutton"><a href="https://twitter.com/intent/tweet?screen_name=ScottSmith95&text=(about%3A%20<?php the_permalink(); ?>)" class="twitter-mention-button" data-related="ScottSmith95">Reply to this post</a></div>
 					<p class="date">Committed on <?php twentyten_posted_on(); ?></p>
 					</div>
+					
+					<?php elseif ( has_post_format( 'quote' )): ?>
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php the_content( __( 'continue reading &raquo;', 'twentyten' ) ); ?>
+					<div id="tweetbutton"><a href="https://twitter.com/intent/tweet?screen_name=ScottSmith95&text=(about%3A%20<?php the_permalink(); ?>)" class="twitter-mention-button" data-related="ScottSmith95">Reply to this post</a></div>
+					<p class="date">Committed on <?php twentyten_posted_on(); ?></p>
+					</div>
 			
 <?php /* How to display all other posts. */ ?>
 

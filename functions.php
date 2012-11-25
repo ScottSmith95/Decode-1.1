@@ -2,7 +2,7 @@
 /**
  * Based on TwentyTen functions and definitions
  **/
- add_theme_support( 'post-formats', array( 'link') );
+ add_theme_support( 'post-formats', array( 'link', 'quote') );
 //include 'plugins/drop-caps/wp_drop_caps.php';
 if (!function_exists('arl_kottke_archives')) {
 include 'plugins/arl_kottke_archives.php';

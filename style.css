@@ -1,11 +1,11 @@
 /*
-Theme Name: Decode
+Theme Name: Decode Dark
 Theme URI: http://madebyraygun.com/labs/melville
 Description: A clean journal theme with great typography
 Version: 1.1
 Author: Dalton Rooney and Scott Smith
 Author URI: http://madebyraygun.com
-Tags: clean, basic, typography, minimalist, white, single column
+Tags: clean, basic, typography, minimalist, dark, single column
 
 Based on TwentyTen, the default WordPress theme
 */
@@ -45,11 +45,10 @@ a img { border:none } /* Gets rid of IE's blue borders */
 /* @group Body */
 
 body {
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
-	font-size: 0.95em;
+	font: 0.95em 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	color: black;
 	background: #444444;
-	background-image: url('http://beyondtheco.de/podcast/wp-content/themes/Decode/images/Background.jpg?1');
+	background-image: url('http://podcast.beyondtheco.de/wp-content/themes/DecodeDark/images/Background.jpg?1');
 	background-repeat: repeat;
 	background-size: 250px;
 	text-align: left;
@@ -68,7 +67,9 @@ div#wrapper {
 	overflow: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 { 		font-weight:normal; 		margin: 15px 0;
+h1, h2, h3, h4, h5, h6 {
+	font-weight:normal;
+	margin: 15px 0;
 	clear: both;
 }
 
@@ -99,18 +100,16 @@ h1, h2, h3, h4, h5, h6 { 		font-weight:normal; 		margin: 15px 0;
 }
 
 p {
-	margin:  0 0 20px 0;
+	margin: 0 0 20px 0;
 	line-height: 1.5em;
 	color: #808080;
 }
 
 a {
 	color: #009BCD;
-	transition: color, border-bottom 0.4s, 0.4s ease-out;
-	-webkit-transition: color, border-bottom 0.4s, 0.4s ease-out;
-	-moz-transition: color, border-bottom 0.4s, 0.4s ease-out;
-	-o-transition: color, border-bottom 0.4s, 0.4s ease-out;
-	-ms-transition: color, border-bottom 0.4s, 0.4s ease-out;
+	-webkit-transition: color 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
+	-moz-transition: color 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
+	transition: color 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
 	text-decoration: none;
 	border-bottom: 0 solid rgba(69,69,69,0);
 }
@@ -121,12 +120,16 @@ a:hover {
 }
 
 a:active {
-	color: #808080;
-	border-bottom: 1px solid rgba(69,69,69,1);
+	color: #E3E5E8;
+	border-bottom: 1px solid #E3E5E8;
 }
 
-img:hover {
+.powerpress_player a:hover {
 	border-bottom: none;
+}
+
+.powerpress_player audio {
+	width: 75%;
 }
 
 blockquote {
@@ -178,12 +181,11 @@ hr {
 }
 
 span.dropcap{
-	font-weight:bold;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-weight: bold;
 	font-weight: 200;	
 	float:left;
 	font-size: 3em;
-	line-height:1em;
+	line-height: 1em;
 	margin: 8px 2px -10px 0;
 	position:relative;	
 }
@@ -222,21 +224,15 @@ span.dropcap{
 	text-align: center;
 	margin: 0 0 30px 0;
 	font-weight: normal;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-weight: 200;
 	font-size: 30px;
-	line-height:1.2em;
+	line-height: 1.2em;
 	text-decoration: none;
 	color: #808080;
 	clear: both;
-	-webkit-animation: fade-in 1s ease-in-out 1s;
-	-moz-animation: fade-in 1s ease-in-out 1s;
-	-ms-animation: fade-in 1s ease-in-out 1s;
-	animation: fade-in 1s ease-in-out 1s;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fade-in 1s ease-in-out 1s forwards;
+	-moz-animation: fade-in 1s ease-in-out 1s forwards;
+	animation: fade-in 1s ease-in-out 1s forwards;
 	opacity: 0;
 }
 
@@ -247,14 +243,9 @@ span.dropcap{
 .format-link .entry-title a {
 	text-decoration: none;
 	border-bottom: 1px solid #808080;
-	-webkit-animation: fade-in 1s ease-in-out 1s;
-	-moz-animation: fade-in 1s ease-in-out 1s;
-	-ms-animation: fade-in 1s ease-in-out 1s;
-	animation: fade-in 1s ease-in-out 1s;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fade-in 1s ease-in-out 1s forwards;
+	-moz-animation: fade-in 1s ease-in-out 1s forwards;
+	animation: fade-in 1s ease-in-out 1s forwards;
 	opacity: 0;
 }
 
@@ -265,6 +256,29 @@ span.dropcap{
 .format-link .entry-title a:active {
 	color: #808080;
 	border-bottom: 1px solid #808080;
+}
+
+.format-quote p {
+	margin-top: 3%;
+	font-size: 2.6em;
+}
+
+.format-quote p:before { 
+	content: '\201C'; 
+	font-size: 1.3em;
+}
+
+.format-quote p:after { 
+	content: '\201D';
+	font-size: 1.3em;
+}
+
+.format-quote .date:before {
+	content: "";
+}
+
+.format-quote .date:after {
+	content: "";
 }
 
 #content abbr, #content acronym {
@@ -318,7 +332,6 @@ p.date a:hover {
 }
 
 .page #content h2 {
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-weight: 200;	
 	margin: 35px 0 10px;
 	font-size: 18px;
@@ -336,14 +349,9 @@ label.screen-reader-text {
 
 
 .entry-title a, .page-title a {
-	-webkit-animation: fade-in 1s ease-in-out 1s;
-	-moz-animation: fade-in 1s ease-in-out 1s;
-	-ms-animation: fade-in 1s ease-in-out 1s;
-	animation: fade-in 1s ease-in-out 1s;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fade-in 1s ease-in-out 1s forwards;
+	-moz-animation: fade-in 1s ease-in-out 1s forwards;
+	animation: fade-in 1s ease-in-out 1s forwards;
 	opacity: 0;
 	color: #808080;
 	text-decoration: none;
@@ -360,7 +368,6 @@ label.screen-reader-text {
 }
 
 a#cancel-comment-reply-link {
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-size: 11px;
 	margin: 0 10px;
 }
@@ -411,22 +418,15 @@ div#header {
 }
 
 #site-logo img {
-	height: 25%;
+	height: 15em;
 	width: auto;
 	text-align: center;
 	-webkit-transition: box-shadow 0.5s;
 	-moz-transition: box-shadow 0.5s;
-    -ms-transition: box-shadow 0.5s;
-	-o-transition: box-shadow 0.5s;
 	transition: box-shadow 0.5s;
-	-webkit-animation: fly-in 1s 1.1s alternate;
-	-moz-animation: fly-in 1s 1.1s alternate;
-	-ms-animation: fly-in 1s 1.1s alternate;
-	animation: fly-in 1s 1.1s alternate;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fly-in 1s ease-in-out 1.1s forwards;
+	-moz-animation: fly-in 1s ease-in-out 1.1s forwards;
+	animation: fly-in 1s ease-in-out 1.1s forwards;
 	opacity: 0;
 	position: relative;
 	border-radius: 300px;
@@ -455,19 +455,12 @@ div#header {
 	font-size: 45px;
 	font-style: none;
 	text-decoration: none;
-	-webkit-transition: text-shadow, color 0.5s, 0.5s;
-	-moz-transition: text-shadow, color 0.5s, 0.5s;
-    -ms-transition: text-shadow, color 0.5s, 0.5s;
-	-o-transition: text-shadow, color 0.5s, 0.5s;
-	transition: text-shadow, color 0.5s, 0.5s;
-	-webkit-animation: fly-in 1s 0.9s alternate;
-	-moz-animation: fly-in 1s 0.9s alternate;
-	-ms-animation: fly-in 1s 0.9s alternate;
-	animation: fly-in 1s 0.9s alternate;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-transition: text-shadow 0.5s, color 0.5s;
+	-moz-transition: text-shadow 0.5s, color 0.5s;
+	transition: text-shadow 0.5s, color 0.5s;
+	-webkit-animation: fly-in 1s ease-in-out 0.9s forwards;
+	-moz-animation: fly-in 1s ease-in-out 0.9s forwards;
+	animation: fly-in 1s ease-in-out 0.9s forwards;
 	color: #808080;
 	border-bottom: none;
 	text-shadow: 0 0 0 rgba(0,0,0,0);
@@ -496,11 +489,6 @@ div#header {
 	100%{top: 0px; opacity: 1;}
 }
 
-@-ms-keyframes fly-in {
-	0% {top: -250px; opacity: 0;}
-	100%{top: 0px; opacity: 1;}
-}
-			
 @keyframes fly-in {
 	0% {top: -250px; opacity: 0;}
 	100%{top: 0px; opacity: 1;}
@@ -516,11 +504,6 @@ div#header {
 	100%{opacity: 0.99;}
 }
 
-@-ms-keyframes fade-in {
-	0% {opacity: 0;}
-	100%{opacity: 0.99;}
-}
-			
 @keyframes fade-in {
 	0% {opacity: 0;}
 	100%{opacity: 0.99;}
@@ -528,20 +511,11 @@ div#header {
 
 div#site-description {
 	text-align: center;
-	-webkit-animation: fly-in 1s ease-in-out 0.5s;
-	-moz-animation: fly-in 1s ease-in-out 0.5s;
-	-ms-animation: fly-in 1s ease-in-out 0.5s;
-	animation: fly-in 1s ease-in-out 0.5s;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fly-in 1s ease-in-out 0.7s forwards;
+	-moz-animation: fly-in 1s ease-in-out 0.7s forwards;
+	animation: fly-in 1s ease-in-out 0.7s forwards;
 	position: relative;
 	opacity: 0;
-}
-
-#sociallinksmobile {
-	display: none;
 }
 
 #sociallinks {
@@ -552,14 +526,9 @@ div#site-description {
 	list-style: none;
 	text-align: center;
 	margin: 20px auto 20px auto;
-	-webkit-animation: fly-in 1s ease-in-out 0.4s;
-	-moz-animation: fly-in 1s ease-in-out 0.4s;
-	-ms-animation: fly-in 1s ease-in-out 0.4s;
-	animation: fly-in 1.3s ease-in-out 0.4s;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fly-in 1s ease-in-out 0.4s forwards;
+	-moz-animation: fly-in 1s ease-in-out 0.4s forwards;
+	animation: fly-in 1.3s ease-in-out 0.4s forwards;
 	position: relative;
 	opacity: 0;
 }
@@ -569,13 +538,13 @@ div#site-description {
 }
 
 #sociallinks img {
-    -webkit-transition: opacity 0.5s ease-in-out;
-	-moz-transition: opacity 0.5s ease-in-out;
-	-o-transition: opacity 0.5s ease-in-out;
-    -ms-transition: opacity 0.5s ease-in-out;
-	transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.4s ease-out;
+	-moz-transition: opacity 0.4s ease-out;
+	transition: opacity 0.4s ease-out;
 	margin-left: 0.4%;
 	margin-right: 0.4%;
+	height: 35px;
+	width: 35px;
 }
 
 #sociallinks img:hover {
@@ -708,7 +677,6 @@ form#commentform {
 }
 
 h3#reply-title, h3#comments-title {
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-weight: 200;
 	font-size: 18px;
 	color: #808080;
@@ -832,19 +800,13 @@ p.form-allowed-tags {
 
 #menu div.menu li a, #menu div.menu-footer li a {
 	text-decoration: none;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	text-decoration: none;
 	color: #808080;
 	border-bottom: none;
-	-webkit-animation: fly-in 1s ease-in-out 0.2s;
-	-moz-animation: fly-in 1s ease-in-out 0.2s;
-	-ms-animation: fly-in 1s ease-in-out 0.2s;
-	animation: fly-in 1s ease-in-out 0.2s;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fly-in 1s ease-in-out 0.2s forwards;
+	-moz-animation: fly-in 1s ease-in-out 0.2s forwards;
+	animation: fly-in 1s ease-in-out 0.2s forwards;
 	position: relative;
 	opacity: 0;
 }
@@ -867,11 +829,9 @@ p.form-allowed-tags {
 }
 
 #menu div.menu ul li.current_page_item a, #menu div.menu-footer ul li.current_page_item a {
-	transition: color, border-bottom 0.4s, 0.4s ease-in-out;
-	-webkit-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
-	-moz-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
-	-o-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
-	-ms-transition: color, border-bottom 0.4s, 0.4s ease-in-out;
+	-webkit-transition: color 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
+	-moz-transition: color 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
+	transition: color 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
 	border-bottom: none;
 }
 
@@ -879,44 +839,37 @@ p.form-allowed-tags {
 	color: #009BCD;
 }
 
-	@-webkit-keyframes shake {
-		0% {right: -7px;}
-		20% {right: 7px;}
-		40% {right: -7px;}
-		80% {right: 7px;}
-		100%{right: 0px;}
-	}
+@-webkit-keyframes shake {
+	0% {right: -7px;}
+	18% {right: 7px;}
+	54% {right: -7px;}
+	72% {right: 7px;}
+	90% {right: -7px;}
+	100%{right: 0px;}
+}
 				
-	@-moz-keyframes shake {
-		0% {right: -7px;}
-		20% {right: 7px;}
-		40% {right: -7px;}
-		80% {right: 7px;}
-		100%{right: 0px;}
-	}
-	
-	@-ms-keyframes shake {
-		0% {right: -7px;}
-		20% {right: 7px;}
-		40% {right: -7px;}
-		80% {right: 7px;}
-		100%{right: 0px;}
-	}
-				
-	@keyframes shake {
-		0% {right: -7px;}
-		20% {right: 7px;}
-		40% {right: -7px;}
-		80% {right: 7px;}
-		100%{right: 0px;}
-	}
+@-moz-keyframes shake {
+	0% {right: -7px;}
+	18% {right: 7px;}
+	54% {right: -7px;}
+	72% {right: 7px;}
+	90% {right: -7px;}
+	100%{right: 0px;}
+}
+
+@keyframes shake {
+	0% {right: -7px;}
+	18% {right: 7px;}
+	54% {right: -7px;}
+	72% {right: 7px;}
+	90% {right: -7px;}
+	100%{right: 0px;}
+}
 
 #menu div.menu ul li.current_page_item:hover, #menu div.menu-footer ul li.current_page_item:hover {
-	-webkit-animation: shake 0.3s;
-	-moz-animation: shake 0.5s;
-	-ms-animation: shake 0.5s;
-	animation: shake 0.5s;
-	color: #808080;
+	-webkit-animation: shake 0.3s ease;
+	-moz-animation: shake 0.3s ease;
+	animation: shake 0.3s ease;
 	position: relative;
 }
 
@@ -974,29 +927,6 @@ div#header {
 	border-bottom: 2px solid #009BCD;
 }
 
-#sociallinks {
-	display: none;
-}
-
-#sociallinksmobile {
-	display: block;
-	margin: 3% 0 2%;
-	-webkit-animation: fly-in 1.15s ease-in-out 0.4s;
-	-moz-animation: fly-in 1.15s ease-in-out 0.4s;
-	-ms-animation: fly-in 1.15s ease-in-out 0.4s;
-	animation: fly-in 1.15s ease-in-out 0.4s;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
-	opacity: 0;
-	position: relative;
-}
-
-#sociallinksmobile a {
-	border-bottom: none;
-}
-
 div#wrapper {
 	width: 98%;
     min-height: 100%;
@@ -1008,7 +938,7 @@ div#wrapper {
 }
 
 #site-logo img {
-	height: 30%;
+	height: 15%;
 	margin-top: 4%;
 }
 
@@ -1030,6 +960,11 @@ div#wrapper {
 	font-size: 65px;
 }
 
+#sociallinks img {
+	height: 35px;
+	width: 35px;
+}
+
 #menu div.menu li a, #menu div.menu-footer li a {
 	font-size: 45px;	
 }
@@ -1037,6 +972,11 @@ div#wrapper {
 #content {
 	padding: 0 3% 0 3%;
 	font-size: 45px;
+}
+
+.powerpress_player audio {
+	height: 2em;
+	width: 100%;
 }
 
 p.date a {
