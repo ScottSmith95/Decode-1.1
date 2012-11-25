@@ -45,7 +45,7 @@ a img { border:none } /* Gets rid of IE's blue borders */
 /* @group Body */
 
 body {
-	font: 0.95em 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font: normal 300 0.95em "museo-sans", sans-serif;
 	color: black;
 	background: #E3E5E8;
 	text-align: left;
@@ -64,13 +64,13 @@ div#wrapper {
 	overflow: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 { 		font-weight:normal; 		margin: 15px 0;
+h1, h2, h3, h4, h5, h6 {
+	margin: 15px 0;
 	clear: both;
 }
 
 #content h1 {
 	font-size: 1.6em;
-	font-weight: bold;
 	margin: 20px 0;
 }
 
@@ -169,7 +169,6 @@ hr {
 
 span.dropcap{
 	font-weight: bold;
-	font-weight: 200;	
 	float: left;
 	font-size: 3em;
 	line-height:1em;
@@ -210,8 +209,6 @@ span.dropcap{
 #content h1.entry-title, #content h1.page-title, #content h2.entry-title {
 	text-align: center;
 	margin: 0 0 30px 0;
-	font-weight: normal;
-	font-weight: 200;
 	font-size: 30px;
 	line-height: 1.2em;
 	text-decoration: none;
@@ -319,7 +316,6 @@ p.date a:hover {
 }
 
 .page #content h2 {
-	font-weight: 200;	
 	margin: 35px 0 10px;
 	font-size: 18px;
 	color: #444444;
@@ -371,7 +367,6 @@ p.wp-caption-text {
 .page-link a:link, .page-link a:visited {
 	background: #f1f1f1;
 	color: #333;
-	font-weight: normal;
 	padding: 0.2em;
 	text-decoration: none;
 }
@@ -410,7 +405,7 @@ div#header {
 }
 
 #site-title a {
-	font-family: 'Droid Sans Mono', sans-serif;
+	font-family: "ubuntu-mono", sans-serif;
 	font-size: 60px;
 	font-style: none;
 	text-decoration: none;
@@ -508,7 +503,7 @@ div#site-description {
 }
 
 #sociallinks img:hover {
-	opacity: 0.7;
+	opacity: 0.75;
 }
 
 #sociallinks img:active {
@@ -637,7 +632,6 @@ form#commentform {
 }
 
 h3#reply-title, h3#comments-title {
-	font-weight: 200;
 	font-size: 18px;
 	color: #444444;
 	margin: 20px 0 10px 0;
@@ -907,19 +901,15 @@ div#wrapper {
 }
 
 #site-description {
-	font-size: 40px;
+	font-size: 1.3em;
 }
 
-#content h1.entry-title, #content h1.page-title {
-	font-size: 70px;
-}
-
-#content h2.entry-title, .format-link .entry-title a {
-	font-size: 65px;
+#content h1.entry-title, #content h1.page-title, #content h2.entry-title {
+	font-size: 1.75em;
 }
 
 #menu div.menu li a, #menu div.menu-footer li a {
-	font-size: 45px;	
+	font-size: 1.6em;	
 }
 
 .format-quote p {

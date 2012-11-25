@@ -63,19 +63,6 @@ endif;
 /* Register & enqueue stylesheets
 /*-----------------------------------------------------------------------------------*/
  
-add_action( 'init', 'wap8_google_fonts' );
- 
-if ( !function_exists( 'wap8_google_fonts' ) ) {
-	function wap8_google_fonts() {
-		if ( !is_admin() ) { // we do not want this to load in the dashboard
-			// register Google Fonts stylesheet
-			wp_register_style( 'wap8_google-fonts', 'http://fonts.googleapis.com/css?family=Droid+Sans+Mono', '', '', 'screen' );
- 
-			// enqueue Google Fonts stylesheet
-			wp_enqueue_style( 'wap8_google-fonts' );
-		}
-	}
-}
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *

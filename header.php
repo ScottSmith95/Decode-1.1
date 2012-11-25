@@ -18,32 +18,11 @@
 	<link rel="stylesheet" type="text/css" href="http://beyondtheco.de/wp-content/themes/Decode/css/sh-ttybrowser.css" />
 <![endif]-->
 <link rel="shortcut icon" href="http://beyondtheco.de/wp-content/themes/Decode/images/favicon.ico">
-    <script type="text/javascript">
-  WebFontConfig = {
-    google: { families: [ 'Droid+Sans+Mono::latin' ] }
-  };
-  (function() {
-    var wf = document.createElement('script');
-    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-  })(); </script>
-    <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33936718-3']);
-  _gaq.push(['_trackPageview']);
+<!-- Typekit -->
+<script type="text/javascript" src="//use.typekit.net/olq0xkh.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 <noscript>
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/noscript.css" /></noscript>  
 <title><?php
@@ -108,9 +87,9 @@ if(is_single() || is_page()) {
 				<<?php echo $heading_tag; ?> id="site-title">
 						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 				</<?php echo $heading_tag; ?>>
-				<div id="site-description">by <a href="http://ScottHSmith.com">Scott Smith</a></div>
-				<div id="sociallinks">
-			<ol> 
+			<div id="site-description">by <a href="http://ScottHSmith.com">Scott Smith</a></div>
+			<div id="sociallinks">
+				<ol> 
 					<a id="TwitterLink" href="http://twitter.com/BeyondTheCode">
 						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/Twitter.svg"/>
 					</a>
@@ -120,8 +99,8 @@ if(is_single() || is_page()) {
 					<a id="GooglePlusLink" href="http://plus.google.com/u/0/b/112495893888970542384/112495893888970542384/posts">
 						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/GooglePlus.svg"/>
 					</a>
-			</ol>
-		</div>
+				</ol>
+			</div>
 		<div id="menu"><?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used.  */ ?>
 <?php wp_nav_menu( array( 'container_class' => 'menu-footer', 'theme_location' => 'primary' ) ); ?></div>
 		
