@@ -206,30 +206,43 @@ span.dropcap{
 	font-style: italic;
 }
 
-#content h1.entry-title, #content h1.page-title, #content h2.entry-title {
-	text-align: center;
-	margin: 0 0 30px 0;
-	font-size: 30px;
-	line-height: 1.2em;
-	text-decoration: none;
-	color: #444444;
-	clear: both;
+#content .entry-title, #content h1.page-title {
 	-webkit-animation: fade-in 1s ease-in-out 1s forwards;
 	-moz-animation: fade-in 1s ease-in-out 1s forwards;
 	animation: fade-in 1s ease-in-out 1s forwards;
+	text-align: center;
+	font-variant: normal;
+	font-style: normal;
+	text-decoration: none;
+	clear: both;
+	margin: 0 10% 15px 10%;
+	font-size: 1.1em;
+	line-height: 1.3em;
+	color: #444444;
 	opacity: 0;
 }
 
-#content h1.page-title {
-	margin-top: 15px;
+#content .entry-title h2 {
+	margin-bottom: 1.5%;
+	font-size: 1.8em;
 }
 
-.format-link .entry-title a {
-	text-decoration: none;
-	border-bottom: 1px solid #444444;
+#content h1.page-title {
+	margin-top: 3%;
+	font-size: 1.6em;
+}
+
+#content .entry-title h1 {
+	font-size: 1.8em;
+}
+
+.format-link .entry-title h2 a {
 	-webkit-animation: fade-in 1s ease-in-out 1s forwards;
 	-moz-animation: fade-in 1s ease-in-out 1s forwards;
 	animation: fade-in 1s ease-in-out 1s forwards;
+	text-decoration: none;
+	color: #444444;
+	border-bottom: 1px solid #444444;
 	opacity: 0;
 }
 
@@ -257,11 +270,15 @@ span.dropcap{
 	font-size: 1.3em;
 }
 
-.format-quote .date:before {
+.format-quote #reply p {
+	font-size: 1em;
+}
+
+.format-quote .date:before, .format-quote #reply p:before {
 	content: "";
 }
 
-.format-quote .date:after {
+.format-quote .date:after, .format-quote #reply p:after {
 	content: "";
 }
 
@@ -281,10 +298,6 @@ span.dropcap{
 
 div#content {
 	margin: 0 0 20px 0;
-}
-
-#tweetbutton {
-	margin: 35px 0 0 0;
 }
 
 #content div.post p.date, #content div.post p.post-meta {
@@ -330,8 +343,7 @@ label.screen-reader-text {
 	display: none;
 }
 
-
-.entry-title a, .page-title a {
+.entry-title, .page-title {
 	-webkit-animation: fade-in 1s ease-in-out 1s forwards;
 	-moz-animation: fade-in 1s ease-in-out 1s forwards;
 	animation: fade-in 1s ease-in-out 1s forwards;
@@ -340,14 +352,72 @@ label.screen-reader-text {
 	text-decoration: none;
 }
 
-.entry-title a:hover, .page-title a:hover {
+.format-link .entry-title a:hover {
 	color: #009BCD;
+	border-bottom: 1px solid #0099CC;
+}
+
+.format-link .entry-title a:active {
+	color: #444444;
+	border-bottom: 1px solid #444444;
+}
+
+#content .entry-title #reply {
+	border-bottom: none;
+}
+
+#content .entry-title #reply p {
+	opacity: 1;
+}
+
+#content .entry-title #reply:hover p {
+	opacity: 0;
+}
+
+#content .entry-title #reply .adnreply, #content .entry-title #reply .twitterreply {
+	opacity: 0 !important;
+}
+
+#content .entry-title #reply:hover .adnreply, #content .entry-title #reply:hover .twitterreply {
+	opacity: 1 !important;
+}
+
+#content .entry-title #reply a, #content .entry-title #reply p {
+	-webkit-transition: margin 0.3s ease-out, color 0.3s ease-out, opacity 0.4s ease-out;
+	-moz-transition: margin 0.3s ease-out, color 0.3s ease-out, opacity 0.4s ease-out;
+	transition: margin 0.3s ease-out, color 0.3s ease-out, opacity 0.4s ease-out;
+	text-align: center;
+	font-size: 1em;
+	margin: 0 1% 30px 1%;
+	color: #444444;
+	border-bottom: none !important;
+	text-decoration: none;
+	display: inline-block;
+}
+
+#content .entry-title #reply:hover a {
+	margin: 0 -3% 30px -3%;
+}
+
+#content .entry-title #reply a:hover {
+	color: #009BCD;
+	border-bottom: none;
+}
+
+#content .entry-title #reply a:active {
+	color: #444444;
+	border-bottom: none;
 }
 
 #content div.post p.date, p.post-meta {
 	font-size: .8em;
 	clear: both;
 	color: #444444;
+}
+
+#content .quotereply {
+	text-align: center;
+	font-size: 1.25em;
 }
 
 a#cancel-comment-reply-link {
@@ -405,9 +475,9 @@ div#header {
 }
 
 #site-title a {
-	font-family: "ubuntu-mono", sans-serif;
-	font-size: 60px;
+	font-size: 3.8em;
 	font-style: none;
+	font-family: "droid-sans-mono", sans-serif;
 	text-decoration: none;
 	-webkit-transition: text-shadow 0.5s, color 0.5s;
 	-moz-transition: text-shadow 0.5s, color 0.5s;
@@ -474,6 +544,10 @@ div#site-description {
 
 #sociallinks {
 	display: inline;
+}
+
+.mobile {
+	display: none;
 }
 
 #sociallinks ol {
@@ -872,6 +946,14 @@ body {
 	font-size: 2em;
 }
 
+.mobile {
+	display: inline;
+}
+
+.desktop {
+	display: none;
+}
+
 div#header {
 	width: auto;
 	padding-bottom: 1%;
@@ -910,6 +992,10 @@ div#wrapper {
 
 #menu div.menu li a, #menu div.menu-footer li a {
 	font-size: 1.6em;	
+}
+
+#content .entry-title h2, #content .entry-title h1 {
+	font-size: 1.5em;
 }
 
 .format-quote p {

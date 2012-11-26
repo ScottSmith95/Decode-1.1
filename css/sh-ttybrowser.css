@@ -14,7 +14,7 @@ div#site-description {
 	opacity: 1;
 }
 
-#content h1.entry-title, #content h1.page-title, #content h2.entry-title {
+#content .entry-title, #content h1.page-title {
 	opacity: 1;
 }
 

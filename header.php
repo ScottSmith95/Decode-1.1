@@ -93,12 +93,16 @@ if(is_single() || is_page()) {
 					<a id="TwitterLink" href="http://twitter.com/BeyondTheCode">
 						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/Twitter.svg"/>
 					</a>
+					<a id="AppNetLink" class="desktop" href="https://alpha.app.net/scottsmith">
+						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/AppNet.svg"/>
+					</a>
+					<a id="AppNetLink" class="mobile" href="http://BeyondTheCo.de/ADN">
+						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/AppNet.svg"/>
+					</a>
 					<a id="FacebookLink" href="https://www.facebook.com/BeyondTheCode">
 						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/Facebook.svg"/>
 					</a>
-					<a id="GooglePlusLink" href="http://plus.google.com/u/0/b/112495893888970542384/112495893888970542384/posts">
-						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/GooglePlus.svg"/>
-					</a>
+					
 				</ol>
 			</div>
 		<div id="menu"><?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used.  */ ?>

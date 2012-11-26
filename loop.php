@@ -90,14 +90,15 @@
 <?php /* How to display posts in the links category */ ?>
 				<?php elseif ( has_post_format( 'link' )): ?>
 					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<h2><?php print_post_title() ?></h2>
+					<div class="entry-title"><h2><?php print_post_title() ?></h2>
+					<a href="https://twitter.com/intent/tweet?screen_name=ScottSmith95&text=(about%3A%20<?php the_permalink(); ?>)" class="tweetreply" data-related="ScottSmith95">Reply with Twitter</a></div>
 					<?php the_content( __( 'continue reading &raquo;', 'twentyten' ) ); ?>
 					<p class="date"><a href="<?php the_permalink(); ?>">Committed on <?php twentyten_posted_on(); ?></a></p>
 					</div>
 					
 <?php /* How to display posts in the quotes category */ ?>
 				<?php elseif ( has_post_format( 'quote' )): ?>
-					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?></div>
 					<?php the_content( __( 'continue reading &raquo;', 'twentyten' ) ); ?>
 					<p class="date"><a href="<?php the_permalink(); ?>">Committed on <?php twentyten_posted_on(); ?></a></p>
 					</div>
@@ -106,8 +107,8 @@
 
 	<?php else : ?>
 	 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title"><?php the_title(); ?></h2>
-			
+			<div class="entry-title"><h2><?php the_title(); ?></h2>
+			<a class="tweetreply" href="https://twitter.com/intent/tweet?screen_name=ScottSmith95&text=(about%3A%20<?php the_permalink(); ?>)" class="twitter-mention-button" data-related="ScottSmith95">Reply with Twitter</a></div>
 
 	
 			<?php if ( is_archive() || is_search() ) : // Display excerpts for archives and search. ?>
