@@ -215,7 +215,7 @@ span.dropcap{
 	font-style: normal;
 	text-decoration: none;
 	clear: both;
-	margin: 0 10% 15px 10%;
+	margin: 0 10% 1% 10%;
 	font-size: 1.1em;
 	line-height: 1.3em;
 	color: #444444;
@@ -366,16 +366,12 @@ label.screen-reader-text {
 	border-bottom: none;
 }
 
-#content .entry-title #reply p {
-	opacity: 1;
-}
-
-#content .entry-title #reply:hover p {
+#content .entry-title #reply:hover p, .format-quote #reply p {
 	opacity: 0;
 }
 
 #content .entry-title #reply .adnreply, #content .entry-title #reply .twitterreply {
-	opacity: 0 !important;
+	opacity: 0;
 }
 
 #content .entry-title #reply:hover .adnreply, #content .entry-title #reply:hover .twitterreply {
@@ -383,12 +379,12 @@ label.screen-reader-text {
 }
 
 #content .entry-title #reply a, #content .entry-title #reply p {
-	-webkit-transition: margin 0.3s ease-out, color 0.3s ease-out, opacity 0.4s ease-out;
-	-moz-transition: margin 0.3s ease-out, color 0.3s ease-out, opacity 0.4s ease-out;
-	transition: margin 0.3s ease-out, color 0.3s ease-out, opacity 0.4s ease-out;
+	-webkit-transition: margin 0.3s ease-out, color 0.3s ease-out, opacity 0.3s ease-in-out;
+	-moz-transition: margin 0.3s ease-out, color 0.3s ease-out, opacity 0.3s ease-in-out;
+	transition: margin 0.3s ease-out, color 0.3s ease-out, opacity 0.3s ease-in-out;
 	text-align: center;
 	font-size: 1em;
-	margin: 0 1% 30px 1%;
+	margin: 0 1.5% 0 1.5%;
 	color: #444444;
 	border-bottom: none !important;
 	text-decoration: none;
@@ -396,7 +392,7 @@ label.screen-reader-text {
 }
 
 #content .entry-title #reply:hover a {
-	margin: 0 -3% 30px -3%;
+	margin: 0 -3.75% 0 -3.75%;
 }
 
 #content .entry-title #reply a:hover {
@@ -463,14 +459,14 @@ br.clear { clear:both; display:block; height:1px; margin:-1px 0 0 0 } /* Use thi
 div#header {
 	margin: 0 auto;
 	padding: 0 0 0 0;
-	width: 650px;
+	width: 85%;
 	color: #777777;
 	border-bottom: 1px solid #009BCD;
 	text-align: center;
 }
 
 #site-title {
-	margin: 20px 0 10px 0;
+	margin: 4% 0 2% 0;
 	text-align: center;
 }
 
@@ -866,29 +862,20 @@ p.form-allowed-tags {
 }
 
 @-webkit-keyframes shake {
-	0% {right: -7px;}
-	18% {right: 7px;}
-	54% {right: -7px;}
-	72% {right: 7px;}
-	90% {right: -7px;}
+	0%, 54%, 90% {right: -7px;}
+	18%, 72% {right: 7px;}
 	100%{right: 0px;}
 }
 				
 @-moz-keyframes shake {
-	0% {right: -7px;}
-	18% {right: 7px;}
-	54% {right: -7px;}
-	72% {right: 7px;}
-	90% {right: -7px;}
+	0%, 54%, 90% {right: -7px;}
+	18%, 72% {right: 7px;}
 	100%{right: 0px;}
 }
 
 @keyframes shake {
-	0% {right: -7px;}
-	18% {right: 7px;}
-	54% {right: -7px;}
-	72% {right: 7px;}
-	90% {right: -7px;}
+	0%, 54%, 90% {right: -7px;}
+	18%, 72% {right: 7px;}
 	100%{right: 0px;}
 }
 	
@@ -990,12 +977,24 @@ div#wrapper {
 	font-size: 1.75em;
 }
 
+#content .entry-title, #content h1.page-title {
+	margin: 0 0 0 0;
+}
+
 #menu div.menu li a, #menu div.menu-footer li a {
 	font-size: 1.6em;	
 }
 
+#content .entry-title, #content h1.page-title {
+	margin-bottom: 3.5%;
+}
+
 #content .entry-title h2, #content .entry-title h1 {
 	font-size: 1.5em;
+}
+
+#content .entry-title #reply .adnreply, #content .entry-title #reply .twitterreply {
+	opacity: 1;
 }
 
 .format-quote p {
