@@ -366,7 +366,7 @@ label.screen-reader-text {
 	border-bottom: none;
 }
 
-#content .entry-title #reply:hover p, .format-quote #reply p {
+#content .entry-title #reply:hover p, .format-quote #reply:hover p {
 	opacity: 0;
 }
 

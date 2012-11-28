@@ -6,8 +6,13 @@ div#site-description {
 	opacity: 1;
 }
 
+#sociallinks ol {
+	opacity: 1;
+	margin: 1% auto 2% auto;
+}
+
 #sociallinks img {
-	svg { overflow: hidden; }
+	display: none;
 }
 
 #menu div.menu li a, #menu div.menu-footer li a {

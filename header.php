@@ -14,7 +14,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<!--[if IE]>
+<!--[if lt IE 10]>
 	<link rel="stylesheet" type="text/css" href="http://beyondtheco.de/wp-content/themes/Decode/css/sh-ttybrowser.css" />
 <![endif]-->
 <link rel="shortcut icon" href="http://beyondtheco.de/wp-content/themes/Decode/images/favicon.ico">
@@ -92,17 +92,19 @@ if(is_single() || is_page()) {
 				<ol> 
 					<a id="TwitterLink" href="http://twitter.com/BeyondTheCode">
 						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/Twitter.svg"/>
+						<!--[if IE]><img src="http://beyondtheco.de/wp-content/themes/Decode/images/Twitter.svg" width="35" height="35"/><![endif]-->
 					</a>
 					<a id="AppNetLink" class="desktop" href="https://alpha.app.net/scottsmith">
 						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/AppNet.svg"/>
+						<!--[if IE]><img src="http://beyondtheco.de/wp-content/themes/Decode/images/AppNet.svg" width="35" height="35"/><![endif]-->
 					</a>
 					<a id="AppNetLink" class="mobile" href="http://BeyondTheCo.de/ADN">
 						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/AppNet.svg"/>
 					</a>
 					<a id="FacebookLink" href="https://www.facebook.com/BeyondTheCode">
 						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/Facebook.svg"/>
+						<!--[if IE]><img src="http://beyondtheco.de/wp-content/themes/Decode/images/Facebook.svg" width="35" height="35"/><![endif]-->
 					</a>
-					
 				</ol>
 			</div>
 		<div id="menu"><?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used.  */ ?>
