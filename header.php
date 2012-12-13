@@ -91,19 +91,16 @@ if(is_single() || is_page()) {
 			<div id="sociallinks">
 				<ol> 
 					<a id="TwitterLink" href="http://twitter.com/BeyondTheCode">
-						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/Twitter.svg"/>
-						<!--[if IE]><img src="http://beyondtheco.de/wp-content/themes/Decode/images/Twitter.svg" width="35" height="35"/><![endif]-->
+						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/Twitter.svg"width="35" height="35"/>
 					</a>
 					<a id="AppNetLink" class="desktop" href="https://alpha.app.net/scottsmith">
-						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/AppNet.svg"/>
-						<!--[if IE]><img src="http://beyondtheco.de/wp-content/themes/Decode/images/AppNet.svg" width="35" height="35"/><![endif]-->
+						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/AppNet.svg"width="35" height="35"/>
 					</a>
 					<a id="AppNetLink" class="mobile" href="http://BeyondTheCo.de/ADN">
-						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/AppNet.svg"/>
+						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/AppNet.svg"width="35" height="35"/>
 					</a>
 					<a id="FacebookLink" href="https://www.facebook.com/BeyondTheCode">
-						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/Facebook.svg"/>
-						<!--[if IE]><img src="http://beyondtheco.de/wp-content/themes/Decode/images/Facebook.svg" width="35" height="35"/><![endif]-->
+						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/Facebook.svg" width="35" height="35"/>
 					</a>
 				</ol>
 			</div>
