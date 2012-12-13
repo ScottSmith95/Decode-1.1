@@ -247,6 +247,7 @@ span.dropcap{
 }
 
 .format-link .entry-title a:hover {
+	color: #009BCD;
 	border-bottom: 1px solid #0099CC;
 }
 
@@ -270,15 +271,15 @@ span.dropcap{
 	font-size: 1.3em;
 }
 
-.format-quote #reply p {
+.format-quote #reply #replytrigger {
 	font-size: 1em;
 }
 
-.format-quote .date:before, .format-quote #reply p:before {
+.format-quote .date:before, .format-quote #reply #replytrigger:before {
 	content: "";
 }
 
-.format-quote .date:after, .format-quote #reply p:after {
+.format-quote .date:after, .format-quote #reply #replytrigger:after {
 	content: "";
 }
 
@@ -352,12 +353,12 @@ label.screen-reader-text {
 	text-decoration: none;
 }
 
-.format-link .entry-title a:hover {
+.format-link .entry-title .replylink:hover {
 	color: #009BCD;
 	border-bottom: 1px solid #0099CC;
 }
 
-.format-link .entry-title a:active {
+.format-link .entry-title .replylink:active {
 	color: #444444;
 	border-bottom: 1px solid #444444;
 }
@@ -366,22 +367,26 @@ label.screen-reader-text {
 	border-bottom: none;
 }
 
-#content .entry-title #reply:hover p, .format-quote #reply:hover p {
+#content .entry-title #reply #replytrigger {
+	-webkit-font-smoothing: antialiased;
+}
+
+#content .entry-title #reply:hover #replytrigger, #content .entry-title #reply:active #replytrigger, .format-quote #reply:hover #replytrigger, .format-quote #reply:active #replytrigger {
 	opacity: 0;
 }
 
-#content .entry-title #reply .adnreply, #content .entry-title #reply .twitterreply {
+#content .entry-title #reply .replylink {
 	opacity: 0;
 }
 
-#content .entry-title #reply:hover .adnreply, #content .entry-title #reply:hover .twitterreply {
+#content .entry-title #reply:hover .adnreply, #content .entry-title #reply:active .adnreply, #content .entry-title #reply:hover .twitterreply, #content .entry-title #reply:active .twitterreply {
 	opacity: 1 !important;
 }
 
-#content .entry-title #reply a, #content .entry-title #reply p {
-	-webkit-transition: margin 0.3s ease-out, color 0.3s ease-out, opacity 0.3s ease-in-out;
-	-moz-transition: margin 0.3s ease-out, color 0.3s ease-out, opacity 0.3s ease-in-out;
-	transition: margin 0.3s ease-out, color 0.3s ease-out, opacity 0.3s ease-in-out;
+#content .entry-title #reply .replylink, #content .entry-title #reply #replytrigger {
+	-webkit-transition: margin 0.25s ease-out, color 0.25s ease-out, opacity 0.25s ease-in-out;
+	-moz-transition: margin 0.25s ease-out, color 0.25s ease-out, opacity 0.25s ease-in-out;
+	transition: margin 0.25s ease-out, color 0.25s ease-out, opacity 0.25s ease-in-out;
 	text-align: center;
 	font-size: 1em;
 	margin: 0 1.5% 0 1.5%;
@@ -391,16 +396,16 @@ label.screen-reader-text {
 	display: inline-block;
 }
 
-#content .entry-title #reply:hover a {
+#content .entry-title #reply:hover .replylink, #content .entry-title #reply:active .replylink {
 	margin: 0 -3.75% 0 -3.75%;
 }
 
-#content .entry-title #reply a:hover {
+#content .entry-title #reply .replylink:hover {
 	color: #009BCD;
 	border-bottom: none;
 }
 
-#content .entry-title #reply a:active {
+#content .entry-title #reply .replylink:active {
 	color: #444444;
 	border-bottom: none;
 }
@@ -531,9 +536,9 @@ div#header {
 
 div#site-description {
 	text-align: center;
-	-webkit-animation: fly-in 1s ease-in-out 0.7s forwards;
-	-moz-animation: fly-in 1s ease-in-out 0.7s forwards;
-	animation: fly-in 1s ease-in-out 0.7s forwards;
+	-webkit-animation: fly-in 1s ease-in-out 0.75s forwards;
+	-moz-animation: fly-in 1s ease-in-out 0.75s forwards;
+	animation: fly-in 1s ease-in-out 0.75s forwards;
 	position: relative;
 	opacity: 0;
 }
@@ -880,9 +885,9 @@ p.form-allowed-tags {
 }
 	
 #menu div.menu ul li.current_page_item:hover, #menu div.menu-footer ul li.current_page_item:hover {
-	-webkit-animation: shake 0.3s ease;
-	-moz-animation: shake 0.3s ease;
-	animation: shake 0.3s ease;
+	-webkit-animation: shake 0.25s ease 0.25s;
+	-moz-animation: shake 0.25s ease 0.25s;
+	animation: shake 0.25s ease 0.25s;
 	position: relative;
 }
 
