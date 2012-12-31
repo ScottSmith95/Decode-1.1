@@ -246,15 +246,15 @@ span.dropcap{
 	opacity: 0;
 }
 
-.format-link .entry-title a:hover {
-	color: #009BCD;
-	border-bottom: 1px solid #0099CC;
-}
-
-.format-link .entry-title a:active {
-	color: #444444;
-	border-bottom: 1px solid #444444;
-}
+	.format-link .entry-title a:hover {
+		color: #009BCD;
+		border-bottom: 1px solid #0099CC;
+	}
+	
+	.format-link .entry-title a:active {
+		color: #444444;
+		border-bottom: 1px solid #444444;
+	}
 
 .format-quote p {
 	margin-top: 3%;
@@ -271,15 +271,15 @@ span.dropcap{
 	font-size: 1.3em;
 }
 
-.format-quote #reply #replytrigger {
+.format-quote .reply .replytrigger {
 	font-size: 1em;
 }
 
-.format-quote .date:before, .format-quote #reply #replytrigger:before {
+.format-quote .date:before, .format-quote .reply .replytrigger:before {
 	content: "";
 }
 
-.format-quote .date:after, .format-quote #reply #replytrigger:after {
+.format-quote .date:after, .format-quote .reply .replytrigger:after {
 	content: "";
 }
 
@@ -302,7 +302,7 @@ div#content {
 }
 
 #content div.post p.date, #content div.post p.post-meta {
-	margin: 40px 10% 0 10%;
+	margin: 40px 10% 0;
 	padding-bottom: 10px;
 	color: #444444;
 	border-bottom: 1px solid #009BCD;
@@ -313,9 +313,9 @@ p.date a {
 	border-bottom: none;
 }
 
-p.date a:hover {
-	color: #009BCD;
-}
+	p.date a:hover {
+		color: #009BCD;
+	}
 
 #content div.post p.post-meta {
 	margin: 0 0;
@@ -353,37 +353,37 @@ label.screen-reader-text {
 	text-decoration: none;
 }
 
-.format-link .entry-title .replylink:hover {
-	color: #009BCD;
-	border-bottom: 1px solid #0099CC;
-}
+	.ormat-link .entry-title .replylink:hover {
+		color: #009BCD;
+		border-bottom: 1px solid #0099CC;
+	}
+	
+	.format-link .entry-title .replylink:active {
+		color: #0086B2;
+		border-bottom: 1px solid #444444;
+	}
 
-.format-link .entry-title .replylink:active {
-	color: #444444;
-	border-bottom: 1px solid #444444;
-}
-
-#content .entry-title #reply {
+#content .entry-title .reply {
 	border-bottom: none;
 }
 
-#content .entry-title #reply #replytrigger {
-	-webkit-font-smoothing: antialiased;
+#content .entry-title .reply .replytrigger {
+	-webkit-font-smoothing: subpixel-antialiased;
 }
 
-#content .entry-title #reply:hover #replytrigger, #content .entry-title #reply:active #replytrigger, .format-quote #reply:hover #replytrigger, .format-quote #reply:active #replytrigger {
+#content .entry-title .reply:hover .replytrigger, #content .entry-title .reply.triggered .replytrigger, .format-quote .reply:hover .replytrigger, .format-quote .reply.triggered .replytrigger {
 	opacity: 0;
 }
 
-#content .entry-title #reply .replylink {
+#content .entry-title .reply .replylink {
 	opacity: 0;
 }
 
-#content .entry-title #reply:hover .adnreply, #content .entry-title #reply:active .adnreply, #content .entry-title #reply:hover .twitterreply, #content .entry-title #reply:active .twitterreply {
+#content .entry-title .reply:hover .adnreply, #content .entry-title .reply.triggered .adnreply, #content .entry-title .reply:hover .twitterreply, #content .entry-title .reply.triggered .twitterreply {
 	opacity: 1 !important;
 }
 
-#content .entry-title #reply .replylink, #content .entry-title #reply #replytrigger {
+#content .entry-title .reply .replylink, #content .entry-title .reply .replytrigger {
 	-webkit-transition: margin 0.25s ease-out, color 0.25s ease-out, opacity 0.25s ease-in-out;
 	-moz-transition: margin 0.25s ease-out, color 0.25s ease-out, opacity 0.25s ease-in-out;
 	transition: margin 0.25s ease-out, color 0.25s ease-out, opacity 0.25s ease-in-out;
@@ -396,19 +396,19 @@ label.screen-reader-text {
 	display: inline-block;
 }
 
-#content .entry-title #reply:hover .replylink, #content .entry-title #reply:active .replylink {
+#content .entry-title .reply:hover .replylink, #content .entry-title .reply.triggered .replylink {
 	margin: 0 -3.75% 0 -3.75%;
 }
 
-#content .entry-title #reply .replylink:hover {
-	color: #009BCD;
-	border-bottom: none;
-}
-
-#content .entry-title #reply .replylink:active {
-	color: #444444;
-	border-bottom: none;
-}
+	#content .entry-title .reply .replylink:hover {
+		color: #009BCD;
+		border-bottom: none;
+	}
+	
+	#content .entry-title .reply .replylink:active {
+		color: #0086B2;
+		border-bottom: none;
+	}
 
 #content div.post p.date, p.post-meta {
 	font-size: .8em;
@@ -493,16 +493,15 @@ div#header {
 	opacity: 0;
 }
 
-#site-title a:hover {
-	color: #878787;
-	text-shadow: 0 0 8px rgba(91,91,91,0.6);
-}
-
-#site-title a:active {
-	color: #676767;
-	text-shadow: 0px 0px 6px rgba(91,91,91,0.9);
+	#site-title a:hover {
+		color: #444444;
+		text-shadow: 0px 0px 6px rgba(75,75,75,0.75);
+	}
 	
-}
+	#site-title a:active {
+		color: #444444;
+		text-shadow: 0px -2px 12px rgba(75,75,75,0.85);
+	}
 
 @-webkit-keyframes fly-in {
 	0% {top: -250px; opacity: 0;}
@@ -577,13 +576,13 @@ div#site-description {
 	border: none;
 }
 
-#sociallinks img:hover {
-	opacity: 0.75;
-}
-
-#sociallinks img:active {
-	opacity: 0.5;
-}
+	#sociallinks img:hover {
+		opacity: 0.75;
+	}
+	
+	#sociallinks img:active {
+		opacity: 0.5;
+	}
 
 /* @end */
 
@@ -706,7 +705,7 @@ form#commentform {
 	width: 400px;
 }
 
-h3#reply-title, h3#comments-title {
+h3.reply-title, h3#comments-title {
 	font-size: 18px;
 	color: #444444;
 	margin: 20px 0 10px 0;
@@ -828,7 +827,7 @@ p.form-allowed-tags {
 
 #menu div.menu li a, #menu div.menu-footer li a {
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 1em;
 	text-decoration: none;
 	color: #444444;
 	border-bottom: none;
@@ -933,6 +932,41 @@ span.newer-posts a {
 	float: right;
 }
 
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+body {
+	font-size: 1.35em;
+}
+
+div#header {
+	width: auto;
+	padding-bottom: 1%;
+	margin: 0 2%;
+}
+
+#site-title a {
+	font-size: 3.25em;
+}
+
+#sociallinks img {
+	height: 50px;
+	width: 50px;
+}
+
+.menu {
+	font-size: 1.1em;
+}
+
+div#wrapper {
+	width: 90%;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -37px;
+    padding: 10px 0 0 0;
+    overflow: hidden;
+}
+}
+
 @media only screen and (max-device-width: 699px) {
 body {
 	font-size: 2em;
@@ -954,8 +988,8 @@ div#header {
 }
 
 #sociallinks img {
-	height: 75px;
-	width: 75px;
+	height: 85px;
+	width: 85px;
 }
 
 div#wrapper {
@@ -998,8 +1032,8 @@ div#wrapper {
 	font-size: 1.5em;
 }
 
-#content .entry-title #reply .adnreply, #content .entry-title #reply .twitterreply {
-	opacity: 1;
+#content .entry-title .reply:hover .replylink, #content .entry-title .reply.triggered .replylink {
+	margin: 0 -5%;
 }
 
 .format-quote p {

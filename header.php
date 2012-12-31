@@ -52,13 +52,13 @@
 <?php
 #twitter cards hack
 if(is_single() || is_page()) {
-  $twitter_url    = get_permalink();
+ $twitter_url    = get_permalink();
  $twitter_title  = get_the_title();
  $twitter_desc   = get_the_excerpt();
    $twitter_thumbs = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), full );
     $twitter_thumb  = $twitter_thumbs[0];
       if(!$twitter_thumb) {
-      $twitter_thumb = 'http://ScottHSmith.com/images/ScottPic.png';
+      $twitter_thumb = 'http://ScottHSmith.com/images/ScottPic.jpg';
     }
   $twitter_name   = str_replace('@', '', get_the_author_meta('twitter'));
 ?>
@@ -76,6 +76,17 @@ if(is_single() || is_page()) {
   }
 }
 ?>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.replytrigger').click(function(){
+			$(this).closest('reply').addClass('triggered').setTimeout(1).removeClass('triggered');
+		});
+	});
+</script>
+
 
 <?php wp_head();?>
 </head>
@@ -102,6 +113,7 @@ if(is_single() || is_page()) {
 					<a id="FacebookLink" href="https://www.facebook.com/BeyondTheCode">
 						<img src="http://beyondtheco.de/wp-content/themes/Decode/images/Facebook.svg" width="35" height="35"/>
 					</a>
+   					<a href="https://plus.google.com/111019875270643537691?rel=author" style="display: none;">Google</a>
 				</ol>
 			</div>
 		<div id="menu"><?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used.  */ ?>
