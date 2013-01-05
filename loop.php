@@ -91,7 +91,7 @@
 				<?php elseif ( has_post_format( 'link' )): ?>
 					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="entry-title"><h2><?php print_post_title() ?></h2>
-					<div class="reply"><a href="https://twitter.com/intent/tweet?screen_name=ScottSmith95&text=(about%3A%20<?php the_permalink(); ?>)" class="twitterreply replylink" data-related="ScottSmith95">With Twitter</a><a class="replytrigger">Reply</a><a href="https://alpha.app.net/scottsmith" class="adnreply replylink">With ADN</a></div></div>
+					<div class="reply"><a href="https://twitter.com/intent/tweet?screen_name=ScottSmith95&text=(about%3A%20<?php the_permalink(); ?>) " class="twitterreply replylink" target="_blank" data-related="ScottSmith95">With Twitter</a><a class="replytrigger">Reply</a><a href="https://alpha.app.net/intent/post?text=@ScottSmith (about%3A%20<?php the_permalink(); ?>) " class="adnreply replylink" target="_blank">With ADN</a></div></div>
 					<?php the_content( __( 'continue reading &raquo;', 'twentyten' ) ); ?>
 					<p class="date"><a href="<?php the_permalink(); ?>">Committed on <?php twentyten_posted_on(); ?></a></p>
 					</div>
@@ -108,7 +108,7 @@
 	<?php else : ?>
 	 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="entry-title"><h2><?php the_title(); ?></h2>
-			<div class="reply"><a href="https://twitter.com/intent/tweet?screen_name=ScottSmith95&text=(about%3A%20<?php the_permalink(); ?>)" class="twitterreply replylink" data-related="ScottSmith95">With Twitter</a><a class="replytrigger">Reply</a><a href="https://alpha.app.net/scottsmith" class="adnreply replylink">With ADN</a></div></div>
+			<div class="reply"><a href="https://twitter.com/intent/tweet?screen_name=ScottSmith95&text=(about%3A%20<?php the_permalink(); ?>) " class="twitterreply replylink" target="_blank" data-related="ScottSmith95">With Twitter</a><a class="replytrigger">Reply</a><a href="https://alpha.app.net/intent/post?text=@ScottSmith (about%3A%20<?php the_permalink(); ?>) " class="adnreply replylink" target="_blank">With ADN</a></div></div>
 
 	
 			<?php if ( is_archive() || is_search() ) : // Display excerpts for archives and search. ?>

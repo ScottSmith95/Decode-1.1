@@ -389,15 +389,19 @@ label.screen-reader-text {
 	transition: margin 0.25s ease-out, color 0.25s ease-out, opacity 0.25s ease-in-out;
 	text-align: center;
 	font-size: 1em;
-	margin: 0 1.5% 0 1.5%;
 	color: #444444;
 	border-bottom: none !important;
 	text-decoration: none;
 	display: inline-block;
 }
 
+#content .entry-title .reply .replytrigger {
+	margin: 0 1.5%;
+	target-new: tab;
+}
+
 #content .entry-title .reply:hover .replylink, #content .entry-title .reply.triggered .replylink {
-	margin: 0 -3.75% 0 -3.75%;
+	margin: 0 -3.75%;
 }
 
 	#content .entry-title .reply .replylink:hover {
@@ -1030,6 +1034,11 @@ div#wrapper {
 
 #content .entry-title h2, #content .entry-title h1 {
 	font-size: 1.5em;
+}
+
+#content .entry-title .reply .replytrigger {
+	position: relative;
+	left: -25px;
 }
 
 #content .entry-title .reply:hover .replylink, #content .entry-title .reply.triggered .replylink {

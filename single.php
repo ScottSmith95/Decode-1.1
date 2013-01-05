@@ -8,7 +8,7 @@ get_header(); ?>
 						<?php if ( has_post_format( 'link' )): ?>
 					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="entry-title"><h1><?php print_post_title() ?></h1>
-					<div class="reply"><a href="https://twitter.com/intent/tweet?screen_name=ScottSmith95&text=(about%3A%20<?php the_permalink(); ?>)" class="twitterreply replylink" data-related="ScottSmith95">With Twitter</a><a class="replytrigger">Reply</a><a href="https://alpha.app.net/scottsmith" class="adnreply replylink">With ADN</a></div></div>
+					<div class="reply"><a href="https://twitter.com/intent/tweet?screen_name=ScottSmith95&text=(about%3A%20<?php the_permalink(); ?>) " class="twitterreply replylink" target="_blank" data-related="ScottSmith95">With Twitter</a><a class="replytrigger">Reply</a><a href="https://alpha.app.net/intent/post?text=@ScottSmith (about%3A%20<?php the_permalink(); ?>) " class="adnreply replylink" target="_blank">With ADN</a></div></div>
 					<?php the_content( __( 'continue reading &raquo;', 'twentyten' ) ); ?>
 					<p class="date">Committed on <?php twentyten_posted_on(); ?></p>
 					</div>
@@ -16,7 +16,7 @@ get_header(); ?>
 					<?php elseif ( has_post_format( 'quote' )): ?>
 					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php the_content( __( 'continue reading &raquo;', 'twentyten' ) ); ?>
-					<div class="entry-title"><div class="reply"><a href="https://twitter.com/intent/tweet?screen_name=ScottSmith95&text=(about%3A%20<?php the_permalink(); ?>)" class="twitterreply replylink" data-related="ScottSmith95">With Twitter</a><a class="replytrigger">Reply</a><a href="https://alpha.app.net/scottsmith" class="adnreply replylink">With ADN</a></div></div>
+					<div class="entry-title"><div class="reply"><a href="https://twitter.com/intent/tweet?screen_name=ScottSmith95&text=(about%3A%20<?php the_permalink(); ?>) " class="twitterreply replylink" target="_blank" data-related="ScottSmith95">With Twitter</a><a class="replytrigger">Reply</a><a href="https://alpha.app.net/intent/post?text=@ScottSmith (about%3A%20<?php the_permalink(); ?>) " class="adnreply replylink" target="_blank">With ADN</a></div></div>
 					<p class="date">Committed on <?php twentyten_posted_on(); ?></p>
 					</div>
 			
@@ -26,7 +26,7 @@ get_header(); ?>
 	 
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<div class="entry-title"><h1 class="entry-title"><?php the_title(); ?></h1>
-							<div class="reply"><a href="https://twitter.com/intent/tweet?screen_name=ScottSmith95&text=(about%3A%20<?php the_permalink(); ?>)" class="twitterreply replylink" data-related="ScottSmith95">With Twitter</a><a class="replytrigger">Reply</a><a href="https://alpha.app.net/scottsmith" class="adnreply replylink">With ADN</a></div></div>
+							<div class="reply"><a href="https://twitter.com/intent/tweet?screen_name=ScottSmith95&text=(about%3A%20<?php the_permalink(); ?>) " class="twitterreply replylink" target="_blank" data-related="ScottSmith95">With Twitter</a><a class="replytrigger">Reply</a><a href="https://alpha.app.net/intent/post?text=@ScottSmith (about%3A%20<?php the_permalink(); ?>) " class="adnreply replylink" target="_blank">With ADN</a></div></div>
 
 						
 							

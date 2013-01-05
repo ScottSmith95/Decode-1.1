@@ -17,7 +17,8 @@
 <!--[if lt IE 10]>
 	<link rel="stylesheet" type="text/css" href="http://beyondtheco.de/wp-content/themes/Decode/css/sh-ttybrowser.css" />
 <![endif]-->
-<link rel="shortcut icon" href="http://beyondtheco.de/wp-content/themes/Decode/images/favicon.ico">
+<link rel="shortcut icon" href="http://beyondtheco.de/wp-content/themes/Decode/images/favicon.ico?v2">
+<link rel="apple-touch-icon-precomposed" href="http://beyondtheco.de/wp-content/themes/Decode/images/Profile%20Picture.png"/>
 
 <!-- Typekit -->
 <script type="text/javascript" src="//use.typekit.net/olq0xkh.js"></script>
