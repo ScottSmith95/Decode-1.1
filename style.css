@@ -248,7 +248,7 @@ span.dropcap{
 
 	.format-link .entry-title a:hover {
 		color: #009BCD;
-		border-bottom: 1px solid #0099CC;
+		border-bottom: 1px solid #009BCD;
 	}
 	
 	.format-link .entry-title a:active {
@@ -355,20 +355,16 @@ label.screen-reader-text {
 
 	.ormat-link .entry-title .replylink:hover {
 		color: #009BCD;
-		border-bottom: 1px solid #0099CC;
+		border-bottom: 1px solid #009BCD;
 	}
 	
 	.format-link .entry-title .replylink:active {
-		color: #0086B2;
+		color: #007EA6;
 		border-bottom: 1px solid #444444;
 	}
 
 #content .entry-title .reply {
 	border-bottom: none;
-}
-
-#content .entry-title .reply .replytrigger {
-	-webkit-font-smoothing: subpixel-antialiased;
 }
 
 #content .entry-title .reply:hover .replytrigger, #content .entry-title .reply.triggered .replytrigger, .format-quote .reply:hover .replytrigger, .format-quote .reply.triggered .replytrigger {
@@ -379,8 +375,8 @@ label.screen-reader-text {
 	opacity: 0;
 }
 
-#content .entry-title .reply:hover .adnreply, #content .entry-title .reply.triggered .adnreply, #content .entry-title .reply:hover .twitterreply, #content .entry-title .reply.triggered .twitterreply {
-	opacity: 1 !important;
+#content .entry-title .reply:hover .replylink, #content .entry-title .reply.triggered .replylink {
+	opacity: 1;
 }
 
 #content .entry-title .reply .replylink, #content .entry-title .reply .replytrigger {
@@ -410,7 +406,7 @@ label.screen-reader-text {
 	}
 	
 	#content .entry-title .reply .replylink:active {
-		color: #0086B2;
+		color: #007EA6;
 		border-bottom: none;
 	}
 
